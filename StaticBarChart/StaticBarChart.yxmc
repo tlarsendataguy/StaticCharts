@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="NewImage">
-        <Position x="150" y="330" />
+        <Position x="90" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -31,7 +31,7 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="150" y="414" />
+        <Position x="90" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -116,7 +116,7 @@
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText>Input</DefaultAnnotationText>
-          <Left value="False" />
+          <Left value="True" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
@@ -130,7 +130,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="246" y="414" />
+        <Position x="186" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -161,7 +161,7 @@
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="822" y="414" />
+        <Position x="762" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -193,7 +193,7 @@ Color - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="1110" y="414" />
+        <Position x="1050" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -234,7 +234,7 @@ Color - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1398" y="414" />
+        <Position x="1338" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -291,7 +291,7 @@ Range Ratio = ...</DefaultAnnotationText>
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="918" y="498" />
+        <Position x="858" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -318,7 +318,7 @@ Range Ratio = ...</DefaultAnnotationText>
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="DrawPrimitives">
-        <Position x="1494" y="330" />
+        <Position x="1434" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -388,7 +388,7 @@ Range Ratio = ...</DefaultAnnotationText>
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="ExportImage">
-        <Position x="1590" y="330" />
+        <Position x="1530" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -411,7 +411,7 @@ Range Ratio = ...</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1014" y="498" />
+        <Position x="954" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -446,6 +446,7 @@ Range = [Max] - [Min]
         <Position x="0" y="0" width="59" height="59" />
       </GuiSettings>
       <Properties>
+        <Configuration />
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
@@ -455,7 +456,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
-        <Position x="114" y="42" width="59" height="59" />
+        <Position x="54" y="54" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -468,7 +469,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
-        <Position x="222" y="42" width="59" height="59" />
+        <Position x="270" y="54" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -481,7 +482,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="246" y="330" />
+        <Position x="186" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -508,7 +509,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="1302" y="414" />
+        <Position x="1242" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -555,7 +556,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="114" y="126" width="59" height="59" />
+        <Position x="54" y="138" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -568,7 +569,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="222" y="126" width="59" height="59" />
+        <Position x="270" y="138" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -581,7 +582,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-        <Position x="342" y="42" width="59" height="59" />
+        <Position x="390" y="54" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -594,38 +595,24 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="1686" y="330" />
+        <Position x="1626" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Name>Image File</Name>
-          <Abbrev />
+          <Name>Chart</Name>
+          <Abbrev>C</Abbrev>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <DefaultAnnotationText>C Output</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
     </Node>
-    <Node ToolID="29">
-      <GuiSettings Plugin="PreviewImage">
-        <Position x="1686" y="282" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="PreviewImageEntry" />
-    </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="342" y="498" />
+        <Position x="282" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -653,7 +640,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="630" y="414" />
+        <Position x="570" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -716,7 +703,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="33">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="918" y="414" />
+        <Position x="858" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -757,7 +744,7 @@ ELSE [Row-1:Value ...</DefaultAnnotationText>
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1014" y="414" />
+        <Position x="954" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -789,7 +776,7 @@ ELSE [Row-1:Value ...</DefaultAnnotationText>
     </Node>
     <Node ToolID="35">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1206" y="414" />
+        <Position x="1146" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -826,7 +813,7 @@ ELSE [Row-1:Value ...</DefaultAnnotationText>
     </Node>
     <Node ToolID="36">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="438" y="498" />
+        <Position x="378" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -852,7 +839,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="37">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-        <Position x="534" y="498" />
+        <Position x="474" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -882,7 +869,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="39">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="342" y="582" />
+        <Position x="282" y="510" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -908,7 +895,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="40">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-        <Position x="522" y="42" width="59" height="59" />
+        <Position x="570" y="54" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -921,7 +908,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="41">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="138" y="750" />
+        <Position x="78" y="678" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -952,7 +939,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="42">
       <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="522" y="126" width="59" height="59" />
+        <Position x="570" y="138" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -965,7 +952,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="43">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="234" y="750" />
+        <Position x="174" y="678" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -989,7 +976,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="44">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="342" y="666" />
+        <Position x="282" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1012,7 +999,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="45">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="438" y="582" />
+        <Position x="378" y="510" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1043,7 +1030,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="46">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="534" y="582" />
+        <Position x="474" y="510" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1080,7 +1067,7 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
     </Node>
     <Node ToolID="47">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-        <Position x="342" y="750" />
+        <Position x="282" y="678" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1109,7 +1096,7 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
     </Node>
     <Node ToolID="49">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="630" y="582" />
+        <Position x="570" y="510" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -1167,7 +1154,7 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
     </Node>
     <Node ToolID="50">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="726" y="414" />
+        <Position x="666" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -1232,7 +1219,7 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
     </Node>
     <Node ToolID="62">
       <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="342" y="126" width="59" height="59" />
+        <Position x="390" y="138" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -1242,6 +1229,118 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1434" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="500" field="Width" size="8" type="Double" />
+            <FormulaField expression="[Colors] * 20" field="Height" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Size</AnnotationText>
+          <DefaultAnnotationText><![CDATA[Width = 500
+Height = [Colors] * 20
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Colors" source="Summarize: Count - Color" type="Int64" />
+            <Field name="Width" source="Formula: 500" type="Double" />
+            <Field name="Height" source="Formula: [Colors] * 20" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings>
+        <Position x="1530" y="594" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="BatchMacroGroupBy" />
+          <Value name="Input.Input"><![CDATA[Label=Color
+Color=Fill Color
+]]></Value>
+          <Value name="ControlParams"><![CDATA[Width=Width
+Height=Height
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>Legend (63)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Legend">
+          <RecordInfo>
+            <Field name="image path" size="2147483647" source="Export Image (BatchMacro) (BatchMacro)" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="Legend.yxmc" />
+    </Node>
+    <Node ToolID="66">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1626" y="594" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Legend</Name>
+          <Abbrev>L</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>L Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="114" y="138" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1338" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Color" action="Count" rename="Colors" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Colors" source="Summarize: Count - Color" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
     </Node>
   </Nodes>
   <Connections>
@@ -1302,10 +1401,6 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
       <Destination ToolID="28" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="13" Connection="Output" />
-      <Destination ToolID="29" Connection="Image" />
-    </Connection>
-    <Connection>
       <Origin ToolID="15" Connection="Output" />
       <Destination ToolID="7" Connection="Source" />
     </Connection>
@@ -1316,6 +1411,10 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
     <Connection name="#1" Wireless="True">
       <Origin ToolID="17" Connection="Question" />
       <Destination ToolID="21" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="17" Connection="Question" />
+      <Destination ToolID="67" Connection="Question" />
     </Connection>
     <Connection name="#1" Wireless="True">
       <Origin ToolID="18" Connection="Question" />
@@ -1410,8 +1509,32 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
       <Destination ToolID="49" Connection="Right" />
     </Connection>
     <Connection>
+      <Origin ToolID="49" Connection="Join" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="65" Connection="Control" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Join" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="50" Connection="Join" />
       <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Legend" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="67" Connection="Action" />
+      <Destination ToolID="64" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="64" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -1468,10 +1591,16 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
         <Value />
         <IsNumeric value="False" />
       </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (66)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
     </Constants>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>Bar Chart</Name>
+      <Name>StaticBarChart</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
@@ -1540,6 +1669,15 @@ column	1</DynamicConfiguration>
               <Replace value="False" />
               <Destination>1/Color</Destination>
             </Action>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="67" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="False" />
+              <Destination>64/FormulaFields/FormulaField[@field='Width']/@expression</Destination>
+            </Action>
           </True>
         </NoCondition>
       </Actions>
@@ -1604,13 +1742,19 @@ column	1</DynamicConfiguration>
               <Multiline value="True" />
               <Hidden value="False" />
             </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (66)</Description>
+              <Name>Macro Output (66)</Name>
+              <ToolId value="66" />
+            </Question>
           </Questions>
         </Question>
       </Questions>
       <ModuleType>Macro</ModuleType>
       <MacroCustomHelp value="False" />
       <MacroDynamicOutputFields value="False" />
-      <MacroImageStd value="39" />
+      <MacroImage>iVBORw0KGgoAAAANSUhEUgAAAKsAAACrCAYAAAAZ6GwZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUJSURBVHhe7dGxjQNADMRAd/T9V+cvQAQzB9RpAGYbSZ9zzjk/8/f9ruksR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXO+ec8xOfzz8RVgKhn9LB7wAAAABJRU5ErkJggg==</MacroImage>
       <MacroInputs />
       <MacroOutputs />
       <Wiz_CustomHelp value="False" />
@@ -1618,10 +1762,12 @@ column	1</DynamicConfiguration>
       <Wiz_ShowOutput value="True" />
       <Wiz_OpenOutputTools>
         <Tool ToolId="1" Selected="True" />
+        <Tool ToolId="2" Selected="True" />
         <Tool ToolId="11" Selected="True" />
         <Tool ToolId="13" Selected="True" />
         <Tool ToolId="28" Selected="True" />
-        <Tool ToolId="29" Selected="True" />
+        <Tool ToolId="66" Selected="True" />
+        <Tool ToolId="65" Selected="True" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />

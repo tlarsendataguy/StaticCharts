@@ -1,0 +1,821 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">F:\repositories\us_airspace_data\parsed_data\APT.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>APT.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Landing Facility Site Number" size="11" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Landing Facility Type" size="13" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Location Identifier" size="4" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Effective Date" source="Formula: DateTimeParse(Substring([Field_1], 31, 10), &quot;%m/%d/%Y&quot;)" type="Date" />
+            <Field name="FAA Region Code" size="3" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="FAA Region Name" size="50" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="FAA Field Office" size="4" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Associated State" size="2" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Associated State Name" size="20" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Associated County" size="21" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Associated County State" size="2" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Associated City" size="40" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Official Facility Name" size="50" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Airport Ownership Type" size="2" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Airport Ownership Type Name" size="50" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Facility Use" size="2" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Facility Use Name" size="50" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Facility Owner Name" size="35" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Owner Address" size="72" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Owner City State and Zip Code" size="45" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Owner Phone Number" size="16" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Facility Manager Name" size="35" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Manager Address" size="72" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Manager City State and Zip Code" size="45" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Manage Phone Number" size="16" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Airport Reference Point Latitude" scale="7" size="12" source="Formula: IF   Right([__RAW LATITUDE__],1) = 'S'&#xA;THEN -[__FINAL LATITUDE__]&#xA;ELSE [__FINAL LATITUDE__]&#xA;ENDIF" type="FixedDecimal" />
+            <Field name="Airport Reference Point Longitude" scale="7" size="12" source="Formula: IF   Right([__RAW LONGITUDE__],1) = 'W'&#xA;THEN -[__FINAL LONGITUDE__]&#xA;ELSE [__FINAL LONGITUDE__]&#xA;ENDIF" type="FixedDecimal" />
+            <Field name="Airport Elevation" scale="1" size="10" source="Formula: ToNumber([RAW Airport Elevation])" type="FixedDecimal" />
+            <Field name="Airport Elevation Estimation Method" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Magnetic Variation and Direction" size="3" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Magnetic Variation Epoch Year" size="4" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Traffic Pattern Altitude" source="Formula: IF   [Traffic Pattern Altitude] = 0&#xA;THEN 1000&#xA;ELSE [Traffic Pattern Altitude]&#xA;ENDIF" type="Int32" />
+            <Field name="Sectional Chart" size="30" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Distance from Associated City" source="Formula: ToNumber(Substring([Field_1], 627, 2))" type="Int32" />
+            <Field name="Direction from Associated City" size="3" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Land Area Covered By Airport" source="Formula: ToNumber(Substring([Field_1], 632, 5))" type="Int32" />
+            <Field name="Boundary ARTCC Identifier" size="4" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Boundary ARTCC Computer Identifier" size="3" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Boundary ARTCC Name" size="30" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Responsible ARTCC Identifier" size="4" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Responsible ARTCC Computer Identifier" size="3" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Responsible ARTCC Name" size="30" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Tie-In FSS Physically Located on Facility" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Tie-In FSS Identifier" size="4" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Tie-In FSS Name" size="30" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Phone Number to FSS for Administrative Services" size="16" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Phone Number to FSS for Pilot Briefing Services" size="16" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Alternate FSS Identifier" size="4" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Alternate FSS Name" size="30" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Phone Number to Alternate FSS for Pilot Briefing Services" size="16" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Facility Responsible for NOTAMS and Weather" size="4" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Availability of NOTAM D Service" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Airport Activation Date" size="7" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Airport Status Code" size="2" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Airport Status Name" size="50" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Airport ARFF Certification Type and Date" size="15" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Airport ARFF Certification Class" size="3" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Airport ARFF Certification CFR 139 Code" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Airport ARFF Certification Scheduled Service" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Airport ARFF Certification Date" size="8" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Airport Airspace Analysis Determination" size="13" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Airport of Entry for Customs" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Customs Landing Rights Airport" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Military Civil Join Use Agreement" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Landing Rights Granted to Military" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Airport Inspection Method" size="2" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Airport Inspection Method Name" size="50" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Group Performing Physical Inspection" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Group Performing Physical Inspection Name" size="50" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Last Physical Inspection Date" source="Formula: IF   IsEmpty(Trim(Substring([Field_1], 884, 8)))&#xA;THEN NULL()&#xA;ELSE DateTimeParse(Substring([Field_1], 884, 8), &quot;%m%d%Y&quot;)&#xA;ENDIF" type="Date" />
+            <Field name="Last Date Information Request was Completed" source="Formula: IF   IsEmpty(Trim(Substring([Field_1], 892, 8)))&#xA;THEN NULL()&#xA;ELSE DateTimeParse(Substring([Field_1], 892, 8), &quot;%m%d%Y&quot;)&#xA;ENDIF" type="Date" />
+            <Field name="Airframe Repair Service Availability" size="5" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Power Plant Repair Availability" size="5" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Type of Bottled Oxygen Available" size="8" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Type of Bulk Oxygen Available" size="8" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Airport Lighting Schedule" size="7" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Beacon Lighting Schedule" size="7" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Air Traffic Control Tower Located on Airport" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Unicom Frequency" scale="3" size="10" source="Formula: ToNumber(Trim(Substring([Field_1], 981, 7)))" type="FixedDecimal" />
+            <Field name="CTAF" scale="3" size="10" source="Formula: ToNumber(Trim(Substring([Field_1], 988, 7)))" type="FixedDecimal" />
+            <Field name="Segmented Circle Airport Marker System" size="4" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Lens Color of Beacon" size="3" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Lens Color of Beacon Name" size="50" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Landing Fee Charged to Non-Commercial Users" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Facility Used for Medical Purposes" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="Single Engine GA Aircraft" source="Formula: ToNumber(Substring([Field_1], 1004, 3))" type="Int32" />
+            <Field name="Multi Engine GA Aircraft" source="Formula: ToNumber(Substring([Field_1], 1007, 3))" type="Int32" />
+            <Field name="Jet Engine GA Aircraft" source="Formula: ToNumber(Substring([Field_1], 1010, 3))" type="Int32" />
+            <Field name="GA Helicopter" source="Formula: ToNumber(Substring([Field_1], 1013, 3))" type="Int32" />
+            <Field name="Operational Gliders" source="Formula: ToNumber(Substring([Field_1], 1016, 3))" type="Int32" />
+            <Field name="Operational Military Aircraft" source="Formula: ToNumber(Substring([Field_1], 1019, 3))" type="Int32" />
+            <Field name="Ultralight Aircraft" source="Formula: ToNumber(Substring([Field_1], 1022, 3))" type="Int32" />
+            <Field name="Scheduled Operations by CAB-Certified Carriers" source="Formula: ToNumber(Substring([Field_1], 1025, 6))" type="Int32" />
+            <Field name="Scheduled Commuter/Cargo Carriers" source="Formula: ToNumber(Substring([Field_1], 1031, 6))" type="Int32" />
+            <Field name="Air Taxi Operations" source="Formula: ToNumber(Substring([Field_1], 1037, 6))" type="Int32" />
+            <Field name="GA Local Operations" source="Formula: ToNumber(Substring([Field_1], 1043, 6))" type="Int32" />
+            <Field name="GA Itinerant Operations" source="Formula: ToNumber(Substring([Field_1], 1049, 6))" type="Int32" />
+            <Field name="Military Operations" source="Formula: ToNumber(Substring([Field_1], 1055, 6))" type="Int32" />
+            <Field name="12-Month Annual Operations Ending Date" source="Formula: IF   IsEmpty(Trim(Substring([Field_1], 1061, 10)))&#xA;THEN NULL()&#xA;ELSE DateTimeParse(Substring([Field_1], 1061, 10), &quot;%m/%d/%Y&quot;)&#xA;ENDIF" type="Date" />
+            <Field name="Airport Position Source" size="16" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Airport Position Source Date" source="Formula: IF   Substring([Field_1], 1093, 4) &lt; '1900'&#xA;THEN NULL()&#xA;ELSE DateTimeParse(Substring([Field_1], 1087, 10), &quot;%m/%d/%Y&quot;)&#xA;ENDIF" type="Date" />
+            <Field name="Airport Elevation Source" size="16" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Airport Elevation Source Date" source="Formula: IF   Substring([Field_1], 1119, 4) &lt; '1900'&#xA;THEN NULL()&#xA;ELSE DateTimeParse(Substring([Field_1], 1113, 10), &quot;%m/%d/%Y&quot;)&#xA;ENDIF" type="Date" />
+            <Field name="Transient Storage Facilities" size="12" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Wind Indicator" size="3" source="Formula: Trim([_CurrentField_])" type="String" />
+            <Field name="ICAO Identifier" size="7" source="Formula: Trim([_CurrentField_])" type="V_String" />
+            <Field name="Minimum Operational Network" size="1" source="Formula: Trim([_CurrentField_])" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="246" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="1" field="Color" size="8" type="Int64" />
+            <FormulaField expression="1" field="Airports" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Color = 1
+Airports = 1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings>
+        <Position x="342" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Width">660</Value>
+          <Value name="Height">500</Value>
+          <Value name="Background">#FFFFFF</Value>
+          <Value name="Input.Data"><![CDATA[Category=Airport Ownership Type
+Value=Airports
+Color=Facility Use Name
+]]></Value>
+          <Value name="BarColors">#0000FF
+#FF0000
+#00FF00</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>Bar Chart (2)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="StaticBarChart\StaticBarChart.yxmc" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+        <Position x="1206" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupingMode>PerRun</GroupingMode>
+          <Orientation>V</Orientation>
+          <Separator>Continuous</Separator>
+          <Width>100%</Width>
+          <Height />
+          <BorderStyle Enabled="false" Color="#000000" Width="2" />
+          <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+          <Padding>10</Padding>
+          <LayoutFields orderChanged="False">
+            <Field name="Item" selected="True" Width="" Alignment="Left" />
+          </LayoutFields>
+          <MergeIntoTable value="False" />
+          <SectionNameForGroup />
+          <SectionNameForAllRecords />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Vertical Layout
+All Records Combined</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerImage.PortfolioComposerImage">
+        <Position x="438" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ImageMode>File</ImageMode>
+          <Filename />
+          <ModifyFilename value="True" />
+          <ModifyMode>ReplacePath</ModifyMode>
+          <ModifyField>image path</ModifyField>
+          <StopIfNotFound value="True" />
+          <ImageStyle FixedWidth="false" ImageWidth="200" ShowBorder="false" BorderWidth="1" BorderColor="#000000" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerImagePlugin" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerImage.PortfolioComposerImage">
+        <Position x="438" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ImageMode>File</ImageMode>
+          <Filename />
+          <ModifyFilename value="True" />
+          <ModifyMode>ReplacePath</ModifyMode>
+          <ModifyField>image path</ModifyField>
+          <StopIfNotFound value="True" />
+          <ImageStyle FixedWidth="false" ImageWidth="200" ShowBorder="false" BorderWidth="1" BorderColor="#000000" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerImagePlugin" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1110" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Error</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="True" />
+          <OutputOrder>
+            <Connection>#1</Connection>
+            <Connection>#2</Connection>
+            <Connection>#3</Connection>
+            <Connection>#4</Connection>
+          </OutputOrder>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+        <Position x="438" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Images />
+          <Output>Item</Output>
+          <HeaderMode value="False" />
+          <RawMode value="False" />
+          <ValidatePCXML value="True" />
+          <Message />
+          <RichTextMode value="True" />
+          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\qc\fs36 Airport Summary\fs24\par
+\pard\par
+As of [Date String:A], there were [Count:0] operational landing facilities listed in the National Airspace system. The landing facilities are broken out into ownership type and whether they are accessible to the public.\par
+}
+]]></RichTextString>
+          <Styles>
+            <Style Name="TextStyle" />
+          </Styles>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Summary</AnnotationText>
+          <DefaultAnnotationText>Airport Summary
+
+As of [Date S...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="534" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Image" selected="True" rename="Item" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="534" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Image" selected="True" rename="Item" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="246" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Landing Facility Site Number" action="Count" rename="Count" />
+            <SummarizeField field="Effective Date" action="Max" rename="Effective Date" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="534" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Item" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
+        <Position x="1302" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileType>pdf</TempFileType>
+          <BatchMode value="False" />
+          <DataField>Layout</DataField>
+          <Separator>Continuous</Separator>
+          <EmbedDependencies value="False" />
+          <ShowHeader value="False" />
+          <ShowFooter value="False" />
+          <PortraitMode value="True" />
+          <PaperType Width="612" Height="792" Left="36" Right="36" Top="36" Bottom="36" />
+          <DefaultStyles>
+            <Style Name="TextStyle" FontName="Arial" FontSize="14" Justify="Left" ForeColor="#000000" Locale="1033" />
+          </DefaultStyles>
+          <PNGResolution>1</PNGResolution>
+          <PNGLargerAction>squeeze</PNGLargerAction>
+          <PNGLargerThanPageChoice>warning</PNGLargerThanPageChoice>
+          <PNGTransparentBG value="False" />
+          <PNGBackColor value="#ffffff" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerRenderPlugin" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="342" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Airport Ownership Type Name" action="GroupBy" rename="Airport Ownership Type Name" />
+            <SummarizeField field="Landing Facility Site Number" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="438" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Count" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>Count - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+        <Position x="534" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Images />
+          <Output>Label</Output>
+          <HeaderMode value="False" />
+          <RawMode value="False" />
+          <ValidatePCXML value="True" />
+          <Message />
+          <RichTextMode value="True" />
+          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\qc\fs20 [Airport Ownership Type Name:A]\fs24\par
+}
+]]></RichTextString>
+          <Styles>
+            <Style Name="TextStyle" />
+          </Styles>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Label</AnnotationText>
+          <DefaultAnnotationText>[Airport Ownership Type Name:A...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+        <Position x="630" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupingMode>PerRun</GroupingMode>
+          <Orientation>H</Orientation>
+          <Separator>Continuous</Separator>
+          <Width>100%</Width>
+          <Height />
+          <BorderStyle Enabled="false" Color="#000000" Width="2" />
+          <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+          <Padding>0</Padding>
+          <LayoutFields orderChanged="False">
+            <Field name="Label" selected="True" Width="16%" Alignment="Top" />
+          </LayoutFields>
+          <MergeIntoTable value="False" />
+          <SectionNameForGroup />
+          <SectionNameForAllRecords />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Horizontal Layout
+All Records Combined</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="726" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Layout" selected="True" rename="Item" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="822" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Error</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="True" />
+          <OutputOrder>
+            <Connection>#1</Connection>
+            <Connection>#2</Connection>
+          </OutputOrder>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+        <Position x="918" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupingMode>PerRun</GroupingMode>
+          <Orientation>V</Orientation>
+          <Separator>Continuous</Separator>
+          <Width>100%</Width>
+          <Height />
+          <BorderStyle Enabled="false" Color="#000000" Width="2" />
+          <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+          <Padding>0</Padding>
+          <LayoutFields orderChanged="False">
+            <Field name="Item" selected="True" Alignment="Left" Width="" />
+          </LayoutFields>
+          <MergeIntoTable value="False" />
+          <SectionNameForGroup />
+          <SectionNameForAllRecords />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Vertical Layout
+All Records Combined</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1014" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Layout" selected="True" rename="Item" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="342" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeFormat([Effective Date],&quot;%B %d, %Y&quot;)" field="Date String" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[Format date
+]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Date String = DateTimeFormat([Effective Date],"%B %d, %Y")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="150" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Airport Status Code</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2022-04-15 10:04:51</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2022-04-15 10:04:51</StartDate>
+              <EndDate>2022-04-15 10:04:51</EndDate>
+              <Operand>O</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Operational</AnnotationText>
+          <DefaultAnnotationText>[Airport Status Code] = "O"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="21" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Chart" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Legend" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="True" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="True" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>test</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="2cc1885f-ab7f-4f2d-b722-5a3b0702700c" />
+      <Telemetry>
+        <PreviousWorkflowId value="7a589157-13c8-4269-a452-4a8374da6ec6" />
+        <OriginWorkflowId value="7a589157-13c8-4269-a452-4a8374da6ec6" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
