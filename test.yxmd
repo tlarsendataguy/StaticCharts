@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="294" />
+        <Position x="54" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -132,28 +132,26 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="246" y="294" />
+        <Position x="246" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField expression="1" field="Color" size="8" type="Int64" />
             <FormulaField expression="1" field="Airports" size="8" type="Int64" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText><![CDATA[Color = 1
-Airports = 1
+          <DefaultAnnotationText><![CDATA[Airports = 1
 ]]></DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
-    <Node ToolID="21">
+    <Node ToolID="42">
       <GuiSettings>
-        <Position x="342" y="294" />
+        <Position x="342" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -167,6 +165,7 @@ Color=Facility Use Name
           <Value name="BarColors">#0000FF
 #FF0000
 #00FF00</Value>
+          <Value name="SaveTo">F:\Temp\Bar Chart.png</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>Bar Chart (2)</Name>
@@ -181,7 +180,7 @@ Color=Facility Use Name
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
-        <Position x="1206" y="294" />
+        <Position x="1206" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -211,7 +210,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerImage.PortfolioComposerImage">
-        <Position x="438" y="294" />
+        <Position x="438" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -233,7 +232,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerImage.PortfolioComposerImage">
-        <Position x="438" y="462" />
+        <Position x="438" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -255,7 +254,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="1110" y="294" />
+        <Position x="1110" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -280,7 +279,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
-        <Position x="438" y="210" />
+        <Position x="438" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -314,7 +313,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="534" y="294" />
+        <Position x="534" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -335,7 +334,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="534" y="462" />
+        <Position x="534" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -356,7 +355,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="26">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="246" y="210" />
+        <Position x="246" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -375,7 +374,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="534" y="210" />
+        <Position x="534" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -396,7 +395,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
-        <Position x="1302" y="294" />
+        <Position x="1302" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -428,7 +427,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="342" y="378" />
+        <Position x="342" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -447,7 +446,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="438" y="378" />
+        <Position x="438" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -465,7 +464,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
-        <Position x="534" y="378" />
+        <Position x="534" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -495,7 +494,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="32">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
-        <Position x="630" y="378" />
+        <Position x="630" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -525,7 +524,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="33">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="726" y="378" />
+        <Position x="726" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -546,7 +545,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="822" y="294" />
+        <Position x="822" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -569,7 +568,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="35">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
-        <Position x="918" y="294" />
+        <Position x="918" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -599,7 +598,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="36">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1014" y="294" />
+        <Position x="1014" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -620,7 +619,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="37">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="342" y="210" />
+        <Position x="342" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -641,7 +640,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="38">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="150" y="294" />
+        <Position x="150" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -679,18 +678,18 @@ All Records Combined</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="21" Connection="Data" />
+      <Destination ToolID="42" Connection="Data" />
     </Connection>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
       <Destination ToolID="29" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="21" Connection="Chart" />
+      <Origin ToolID="42" Connection="Chart" />
       <Destination ToolID="19" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="21" Connection="Legend" />
+      <Origin ToolID="42" Connection="Legend" />
       <Destination ToolID="20" Connection="Input" />
     </Connection>
     <Connection>
