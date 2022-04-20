@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="150" />
+        <Position x="54" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -132,18 +132,21 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="246" y="150" />
+        <Position x="246" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <FormulaFields>
             <FormulaField expression="1" field="Airports" size="8" type="Int64" />
+            <FormulaField expression="REGEX_Replace([Airport Ownership Type Name], &quot; &quot;, &quot;\n&quot;)" field="Airport Ownership Type Name" size="50" type="V_String" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText><![CDATA[Airports = 1
-]]></DefaultAnnotationText>
+          <AnnotationText>Airports = 1
+Airport Ownership Type Name</AnnotationText>
+          <DefaultAnnotationText>Airports = 1
+Airport Ownership Type Name = REGEX_Replace([Airport Ownership Type...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -151,21 +154,27 @@
     </Node>
     <Node ToolID="42">
       <GuiSettings>
-        <Position x="342" y="150" />
+        <Position x="342" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="Width">660</Value>
-          <Value name="Height">500</Value>
+          <Value name="Width">1320</Value>
+          <Value name="Height">1000</Value>
+          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
           <Value name="Background">#FFFFFF</Value>
-          <Value name="Input.Data"><![CDATA[Category=Airport Ownership Type
-Value=Airports
+          <Value name="Input.Data"><![CDATA[Category=Airport Ownership Type Name
 Color=Facility Use Name
+Value=Airports
 ]]></Value>
           <Value name="BarColors">#0000FF
 #FF0000
 #00FF00</Value>
           <Value name="SaveTo">F:\Temp\Bar Chart.png</Value>
+          <Value name="ShowX">True</Value>
+          <Value name="xHeight">92</Value>
+          <Value name="xLabelSize">24</Value>
+          <Value name="xPadding">8</Value>
+          <Value name="xAlign">Top</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>Bar Chart (2)</Name>
@@ -180,7 +189,7 @@ Color=Facility Use Name
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
-        <Position x="1206" y="150" />
+        <Position x="726" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -210,7 +219,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerImage.PortfolioComposerImage">
-        <Position x="438" y="150" />
+        <Position x="438" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -232,7 +241,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerImage.PortfolioComposerImage">
-        <Position x="438" y="318" />
+        <Position x="438" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -254,7 +263,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="1110" y="150" />
+        <Position x="630" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -279,7 +288,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
-        <Position x="438" y="66" />
+        <Position x="438" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -313,7 +322,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="534" y="150" />
+        <Position x="534" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -334,7 +343,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="534" y="318" />
+        <Position x="534" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -355,7 +364,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="26">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="246" y="66" />
+        <Position x="246" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -374,7 +383,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="534" y="66" />
+        <Position x="534" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -395,7 +404,7 @@ As of [Date S...</DefaultAnnotationText>
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="PortfolioPluginsGui.ComposerRender.PortfolioComposerRender">
-        <Position x="1302" y="150" />
+        <Position x="822" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -425,201 +434,9 @@ As of [Date S...</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerRenderPlugin" />
     </Node>
-    <Node ToolID="29">
-      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="342" y="234" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <SummarizeFields>
-            <SummarizeField field="Airport Ownership Type Name" action="GroupBy" rename="Airport Ownership Type Name" />
-            <SummarizeField field="Landing Facility Site Number" action="Count" rename="Count" />
-          </SummarizeFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
-    </Node>
-    <Node ToolID="30">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="438" y="234" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <SortInfo locale="1033">
-            <Field field="Count" order="Descending" />
-          </SortInfo>
-        </Configuration>
-        <Annotation DisplayMode="2">
-          <Name />
-          <DefaultAnnotationText>Count - Descending</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
-    </Node>
-    <Node ToolID="31">
-      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
-        <Position x="534" y="234" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Images />
-          <Output>Label</Output>
-          <HeaderMode value="False" />
-          <RawMode value="False" />
-          <ValidatePCXML value="True" />
-          <Message />
-          <RichTextMode value="True" />
-          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-\viewkind4\uc1\pard\qc\fs20 [Airport Ownership Type Name:A]\fs24\par
-}
-]]></RichTextString>
-          <Styles>
-            <Style Name="TextStyle" />
-          </Styles>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>Label</AnnotationText>
-          <DefaultAnnotationText>[Airport Ownership Type Name:A...</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
-    </Node>
-    <Node ToolID="32">
-      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
-        <Position x="630" y="234" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <GroupingMode>PerRun</GroupingMode>
-          <Orientation>H</Orientation>
-          <Separator>Continuous</Separator>
-          <Width>100%</Width>
-          <Height />
-          <BorderStyle Enabled="false" Color="#000000" Width="2" />
-          <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
-          <Padding>0</Padding>
-          <LayoutFields orderChanged="False">
-            <Field name="Label" selected="True" Width="16%" Alignment="Top" />
-          </LayoutFields>
-          <MergeIntoTable value="False" />
-          <SectionNameForGroup />
-          <SectionNameForAllRecords />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>Horizontal Layout
-All Records Combined</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
-    </Node>
-    <Node ToolID="33">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="726" y="234" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <CommaDecimal value="False" />
-          <SelectFields>
-            <SelectField field="Layout" selected="True" rename="Item" />
-            <SelectField field="*Unknown" selected="False" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="34">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="822" y="150" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <ByName_ErrorMode>Error</ByName_ErrorMode>
-          <ByName_OutputMode>All</ByName_OutputMode>
-          <Mode>ByName</Mode>
-          <SetOutputOrder value="True" />
-          <OutputOrder>
-            <Connection>#1</Connection>
-            <Connection>#2</Connection>
-          </OutputOrder>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
-    </Node>
-    <Node ToolID="35">
-      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
-        <Position x="918" y="150" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <GroupingMode>PerRun</GroupingMode>
-          <Orientation>V</Orientation>
-          <Separator>Continuous</Separator>
-          <Width>100%</Width>
-          <Height />
-          <BorderStyle Enabled="false" Color="#000000" Width="2" />
-          <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
-          <Padding>0</Padding>
-          <LayoutFields orderChanged="False">
-            <Field name="Item" selected="True" Alignment="Left" Width="" />
-          </LayoutFields>
-          <MergeIntoTable value="False" />
-          <SectionNameForGroup />
-          <SectionNameForAllRecords />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>Vertical Layout
-All Records Combined</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
-    </Node>
-    <Node ToolID="36">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1014" y="150" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <CommaDecimal value="False" />
-          <SelectFields>
-            <SelectField field="Layout" selected="True" rename="Item" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
     <Node ToolID="37">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="342" y="66" />
+        <Position x="342" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -640,7 +457,7 @@ All Records Combined</DefaultAnnotationText>
     </Node>
     <Node ToolID="38">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="150" y="150" />
+        <Position x="150" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -681,10 +498,6 @@ All Records Combined</DefaultAnnotationText>
       <Destination ToolID="42" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="29" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="42" Connection="Chart" />
       <Destination ToolID="19" Connection="Input" />
     </Connection>
@@ -712,13 +525,9 @@ All Records Combined</DefaultAnnotationText>
       <Origin ToolID="23" Connection="Output" />
       <Destination ToolID="27" Connection="Input" />
     </Connection>
-    <Connection name="#1">
-      <Origin ToolID="24" Connection="Output" />
-      <Destination ToolID="34" Connection="Input" />
-    </Connection>
     <Connection name="#2">
-      <Origin ToolID="33" Connection="Output" />
-      <Destination ToolID="34" Connection="Input" />
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
     </Connection>
     <Connection name="#3">
       <Origin ToolID="25" Connection="Output" />
@@ -728,37 +537,9 @@ All Records Combined</DefaultAnnotationText>
       <Origin ToolID="27" Connection="Output" />
       <Destination ToolID="22" Connection="Input" />
     </Connection>
-    <Connection name="#2">
-      <Origin ToolID="36" Connection="Output" />
-      <Destination ToolID="22" Connection="Input" />
-    </Connection>
     <Connection>
       <Origin ToolID="26" Connection="Output" />
       <Destination ToolID="37" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="29" Connection="Output" />
-      <Destination ToolID="30" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="30" Connection="Output" />
-      <Destination ToolID="31" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="31" Connection="Output" />
-      <Destination ToolID="32" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="32" Connection="Output" />
-      <Destination ToolID="33" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="34" Connection="Output" />
-      <Destination ToolID="35" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="35" Connection="Output" />
-      <Destination ToolID="36" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="37" Connection="Output" />
