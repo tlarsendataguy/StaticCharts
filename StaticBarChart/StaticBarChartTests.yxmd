@@ -788,6 +788,126 @@ Value=Value
       </Properties>
       <EngineSettings Macro="F:\repositories\StaticCharts\StaticBarChart\StaticBarChart.yxmc" />
     </Node>
+    <Node ToolID="80">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="330" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="6" />
+          <Fields>
+            <Field name="Category" />
+            <Field name="Color" />
+            <Field name="Value" />
+          </Fields>
+          <Data>
+            <r>
+              <c>This is category A</c>
+              <c>Z</c>
+              <c>14</c>
+            </r>
+            <r>
+              <c>This is category A</c>
+              <c>Z</c>
+              <c>64</c>
+            </r>
+            <r>
+              <c>This is category B</c>
+              <c>Z</c>
+              <c>1.1</c>
+            </r>
+            <r>
+              <c>This is category B</c>
+              <c>Z</c>
+              <c>5.4</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>Z</c>
+              <c>3</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>Z</c>
+              <c>19</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="81">
+      <GuiSettings Plugin="PreviewImage">
+        <Position x="522" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="PreviewImageEntry" />
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="558" width="240" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>long x-axis labels that need to be wrapped</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="83">
+      <GuiSettings>
+        <Position x="426" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Width">300</Value>
+          <Value name="Height">300</Value>
+          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
+          <Value name="Background">#FFFFFF</Value>
+          <Value name="Input.Data"><![CDATA[Category=Category
+Color=Color
+Value=Value
+]]></Value>
+          <Value name="BarColors">#0000FF</Value>
+          <Value name="SaveTo">Test Results\long x axis labels.png</Value>
+          <Value name="ShowX">True</Value>
+          <Value name="xHeight">40</Value>
+          <Value name="xLabelSize">18</Value>
+          <Value name="xPadding">4</Value>
+          <Value name="xAlign">Top</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="F:\repositories\StaticCharts\StaticBarChart\StaticBarChart.yxmc" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
@@ -849,6 +969,14 @@ Value=Value
     <Connection>
       <Origin ToolID="79" Connection="Chart" />
       <Destination ToolID="42" Connection="Image" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="Output" />
+      <Destination ToolID="83" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="83" Connection="Chart" />
+      <Destination ToolID="81" Connection="Image" />
     </Connection>
   </Connections>
   <Properties>
