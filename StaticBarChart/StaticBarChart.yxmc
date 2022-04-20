@@ -9,7 +9,7 @@
         <Configuration>
           <Width>500</Width>
           <Height>500</Height>
-          <Color>#00000000</Color>
+          <Color>#FFFFFF</Color>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -31,7 +31,7 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="90" y="342" />
+        <Position x="90" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -42,77 +42,42 @@
           <Optional value="False" />
           <TextInput>
             <Configuration>
-              <NumRows value="13" />
+              <NumRows value="6" />
               <Fields>
                 <Field name="Category" />
-                <Field name="Value" />
                 <Field name="Color" />
+                <Field name="Value" />
               </Fields>
               <Data>
                 <r>
                   <c>A</c>
-                  <c>10</c>
-                  <c>W</c>
+                  <c>Z</c>
+                  <c>14</c>
                 </r>
                 <r>
                   <c>A</c>
-                  <c>20</c>
-                  <c>W</c>
+                  <c>Z</c>
+                  <c>64</c>
                 </r>
                 <r>
                   <c>B</c>
-                  <c>25</c>
-                  <c>W</c>
+                  <c>Z</c>
+                  <c>1.1</c>
                 </r>
                 <r>
                   <c>B</c>
-                  <c>16</c>
-                  <c>X</c>
+                  <c>Z</c>
+                  <c>5.4</c>
                 </r>
                 <r>
                   <c>C</c>
+                  <c>Z</c>
                   <c>3</c>
-                  <c>W</c>
                 </r>
                 <r>
                   <c>C</c>
-                  <c>18</c>
-                  <c>W</c>
-                </r>
-                <r>
-                  <c>C</c>
-                  <c>31</c>
-                  <c>X</c>
-                </r>
-                <r>
-                  <c>A</c>
-                  <c>4</c>
-                  <c>X</c>
-                </r>
-                <r>
-                  <c>B</c>
-                  <c>22</c>
-                  <c>X</c>
-                </r>
-                <r>
-                  <c>C</c>
-                  <c>16</c>
-                  <c>X</c>
-                </r>
-                <r>
-                  <c>C</c>
-                  <c>11</c>
-                  <c>X</c>
-                </r>
-                <r>
-                  <c>D</c>
-                  <c>-10</c>
-                  <c>W</c>
-                </r>
-                <r>
-                  <c>D</c>
-                  <c>10</c>
-                  <c>X</c>
+                  <c>Z</c>
+                  <c>19</c>
                 </r>
               </Data>
             </Configuration>
@@ -126,8 +91,8 @@
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Category" size="1" source="TextInput:" type="String" />
-            <Field name="Value" source="TextInput:" type="Int16" />
             <Field name="Color" size="1" source="TextInput:" type="String" />
+            <Field name="Value" source="TextInput:" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -135,7 +100,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="186" y="342" />
+        <Position x="186" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -154,7 +119,7 @@
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
           <SortInfo>
             <Field field="Category" order="Asc" />
@@ -166,7 +131,7 @@
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="858" y="342" />
+        <Position x="858" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -189,11 +154,11 @@ Color - Ascending</DefaultAnnotationText>
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
             <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
           </RecordInfo>
         </MetaInfo>
@@ -202,7 +167,7 @@ Color - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="1146" y="342" />
+        <Position x="1146" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -226,17 +191,17 @@ Color - Ascending</DefaultAnnotationText>
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
             <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
             <Field description="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" name="Value Running Total" source="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" type="Double" />
             <Field name="Height" source="Formula: [Value]" type="Double" />
             <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
-            <Field name="Min" source="Formula: Min(0, [Min])" type="Int64" />
-            <Field name="Max" source="Formula: MAX(0, [Max])" type="Int64" />
+            <Field name="Min" source="Formula: Min(0, [Min])" type="Double" />
+            <Field name="Max" source="Formula: MAX(0, [Max])" type="Double" />
             <Field name="Range" source="Formula: [Max] - [Min]" type="Double" />
           </RecordInfo>
         </MetaInfo>
@@ -245,7 +210,7 @@ Color - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1434" y="342" />
+        <Position x="1434" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -273,21 +238,21 @@ Range Ratio = ...</DefaultAnnotationText>
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
             <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
             <Field description="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" name="Value Running Total" source="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" type="Double" />
             <Field name="Height" source="Formula: [Value]" type="Double" />
             <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
-            <Field name="Min" source="Formula: Min(0, [Min])" type="Int64" />
-            <Field name="Max" source="Formula: MAX(0, [Max])" type="Int64" />
+            <Field name="Min" source="Formula: Min(0, [Min])" type="Double" />
+            <Field name="Max" source="Formula: MAX(0, [Max])" type="Double" />
             <Field name="Range" source="Formula: [Max] - [Min]" type="Double" />
             <Field name="Top" source="Formula: [Max] - [Side Total] + [Value Running Total]" type="Double" />
-            <Field name="Canvas Width" source="New Image" type="Int32" />
-            <Field name="Canvas Height" source="New Image" type="Int32" />
+            <Field name="Canvas Width" source="Formula: [width]" type="Int64" />
+            <Field name="Canvas Height" source="Formula: IF   LowerCase(&quot;True&quot;) = 'true'&#xA;THEN [height] - 18&#xA;ELSE [height]&#xA;ENDIF" type="Int64" />
             <Field name="Bar Size Ratio" source="Formula: 0.8" type="Double" />
             <Field name="Bar Padding Ratio" source="Formula: (1-[Bar Size Ratio]) / 2" type="Double" />
             <Field name="Range Ratio" source="Formula: [Height] / [Range]" type="Double" />
@@ -304,7 +269,7 @@ Range Ratio = ...</DefaultAnnotationText>
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="954" y="426" />
+        <Position x="954" y="510" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -322,8 +287,8 @@ Range Ratio = ...</DefaultAnnotationText>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
-            <Field name="Min" source="Summarize: Sum - Value" type="Int64" />
-            <Field name="Max" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Min" source="Summarize: Sum - Value" type="Double" />
+            <Field name="Max" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -401,7 +366,7 @@ Range Ratio = ...</DefaultAnnotationText>
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="ExportImage">
-        <Position x="1626" y="258" />
+        <Position x="1818" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -424,7 +389,7 @@ Range Ratio = ...</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1050" y="426" />
+        <Position x="1050" y="510" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -446,8 +411,8 @@ Range = [Max] - [Min]
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
-            <Field name="Min" source="Formula: Min(0, [Min])" type="Int64" />
-            <Field name="Max" source="Formula: MAX(0, [Max])" type="Int64" />
+            <Field name="Min" source="Formula: Min(0, [Min])" type="Double" />
+            <Field name="Max" source="Formula: MAX(0, [Max])" type="Double" />
             <Field name="Range" source="Formula: [Max] - [Min]" type="Double" />
           </RecordInfo>
         </MetaInfo>
@@ -493,36 +458,9 @@ Range = [Max] - [Min]
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="19">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="186" y="258" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <CommaDecimal value="False" />
-          <SelectFields>
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="image" size="2147483647" source="New Image" type="Blob" />
-            <Field name="width" source="New Image" type="Int32" />
-            <Field name="height" source="New Image" type="Int32" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="1338" y="342" />
+        <Position x="1338" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -533,8 +471,8 @@ Range = [Max] - [Min]
               <CommaDecimal value="False" />
               <SelectFields>
                 <SelectField field="Source_image" selected="False" input="Source_" />
-                <SelectField field="Source_width" selected="True" rename="Canvas Width" input="Source_" />
-                <SelectField field="Source_height" selected="True" rename="Canvas Height" input="Source_" />
+                <SelectField field="Source_width" selected="False" rename="Canvas Width" input="Source_" />
+                <SelectField field="Source_height" selected="False" rename="Canvas Height" input="Source_" />
                 <SelectField field="*Unknown" selected="True" />
               </SelectFields>
             </Configuration>
@@ -549,21 +487,21 @@ Range = [Max] - [Min]
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
             <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
             <Field description="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" name="Value Running Total" source="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" type="Double" />
             <Field name="Height" source="Formula: [Value]" type="Double" />
             <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
-            <Field name="Min" source="Formula: Min(0, [Min])" type="Int64" />
-            <Field name="Max" source="Formula: MAX(0, [Max])" type="Int64" />
+            <Field name="Min" source="Formula: Min(0, [Min])" type="Double" />
+            <Field name="Max" source="Formula: MAX(0, [Max])" type="Double" />
             <Field name="Range" source="Formula: [Max] - [Min]" type="Double" />
             <Field name="Top" source="Formula: [Max] - [Side Total] + [Value Running Total]" type="Double" />
-            <Field name="Canvas Width" source="New Image" type="Int32" />
-            <Field name="Canvas Height" source="New Image" type="Int32" />
+            <Field name="Canvas Width" source="Formula: [width]" type="Int64" />
+            <Field name="Canvas Height" source="Formula: IF   LowerCase(&quot;True&quot;) = 'true'&#xA;THEN [height] - 18&#xA;ELSE [height]&#xA;ENDIF" type="Int64" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -597,7 +535,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-        <Position x="390" y="54" width="59" height="59" />
+        <Position x="486" y="54" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -610,7 +548,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="1722" y="258" />
+        <Position x="1914" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -627,7 +565,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="378" y="510" />
+        <Position x="378" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -644,7 +582,7 @@ Range = [Max] - [Min]
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
           <SortInfo>
             <Field field="Category" order="Asc" />
@@ -655,7 +593,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="666" y="342" />
+        <Position x="666" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -685,9 +623,9 @@ Range = [Max] - [Min]
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="Category" />
@@ -697,11 +635,11 @@ Range = [Max] - [Min]
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
           <SortInfo>
             <Field field="Category" order="" />
@@ -711,7 +649,7 @@ Range = [Max] - [Min]
           <RecordInfo>
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="Category" />
@@ -722,7 +660,7 @@ Range = [Max] - [Min]
     </Node>
     <Node ToolID="33">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="954" y="342" />
+        <Position x="954" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -749,11 +687,11 @@ ENDIF</Expression>
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
             <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
             <Field description="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" name="Value Running Total" source="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" type="Double" />
           </RecordInfo>
@@ -763,7 +701,7 @@ ENDIF</Expression>
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1050" y="342" />
+        <Position x="1050" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -782,11 +720,11 @@ ENDIF</Expression>
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
             <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
             <Field description="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" name="Value Running Total" source="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" type="Double" />
             <Field name="Height" source="Formula: [Value]" type="Double" />
@@ -797,7 +735,7 @@ ENDIF</Expression>
     </Node>
     <Node ToolID="35">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1242" y="342" />
+        <Position x="1242" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -816,17 +754,17 @@ ENDIF</Expression>
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
             <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
             <Field description="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" name="Value Running Total" source="Formula: IF   [Row-1:Category] != [Category] || [Row-1:Side] != [Side]&#xA;THEN 0&#xA;ELSE [Row-1:Value Running Total] + [Row-1:Value]&#xA;ENDIF" type="Double" />
             <Field name="Height" source="Formula: [Value]" type="Double" />
             <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
-            <Field name="Min" source="Formula: Min(0, [Min])" type="Int64" />
-            <Field name="Max" source="Formula: MAX(0, [Max])" type="Int64" />
+            <Field name="Min" source="Formula: Min(0, [Min])" type="Double" />
+            <Field name="Max" source="Formula: MAX(0, [Max])" type="Double" />
             <Field name="Range" source="Formula: [Max] - [Min]" type="Double" />
             <Field name="Top" source="Formula: [Max] - [Side Total] + [Value Running Total]" type="Double" />
           </RecordInfo>
@@ -836,7 +774,7 @@ ENDIF</Expression>
     </Node>
     <Node ToolID="36">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="474" y="510" />
+        <Position x="474" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -854,7 +792,7 @@ Category - Ascending</DefaultAnnotationText>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -862,7 +800,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="37">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-        <Position x="570" y="510" />
+        <Position x="570" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -881,7 +819,7 @@ Category - Ascending</DefaultAnnotationText>
           <RecordInfo>
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
           <SortInfo>
             <Field field="Location" order="Asc" />
@@ -892,7 +830,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="39">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="282" y="594" />
+        <Position x="282" y="846" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -918,7 +856,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="40">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-        <Position x="570" y="54" width="59" height="59" />
+        <Position x="666" y="54" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -931,7 +869,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="41">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="78" y="762" />
+        <Position x="78" y="1014" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -962,7 +900,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="42">
       <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="570" y="138" width="59" height="59" />
+        <Position x="666" y="138" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -975,7 +913,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="43">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="174" y="762" />
+        <Position x="174" y="1014" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -999,7 +937,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="44">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="282" y="678" />
+        <Position x="282" y="930" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1022,7 +960,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="45">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="378" y="594" />
+        <Position x="378" y="846" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1053,7 +991,7 @@ Category - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="46">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="474" y="594" />
+        <Position x="474" y="846" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1090,7 +1028,7 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
     </Node>
     <Node ToolID="47">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-        <Position x="282" y="762" />
+        <Position x="282" y="1014" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1119,7 +1057,7 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
     </Node>
     <Node ToolID="49">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="570" y="594" />
+        <Position x="570" y="846" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -1177,7 +1115,7 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
     </Node>
     <Node ToolID="50">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="762" y="342" />
+        <Position x="762" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -1207,11 +1145,11 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="Color" />
@@ -1221,11 +1159,11 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
             <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
-            <Field name="Category Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
             <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
           </RecordInfo>
           <SortInfo>
@@ -1246,7 +1184,7 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
     </Node>
     <Node ToolID="62">
       <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="390" y="138" width="59" height="59" />
+        <Position x="486" y="138" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -1259,7 +1197,7 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
     </Node>
     <Node ToolID="64">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1434" y="594" />
+        <Position x="1434" y="846" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1288,7 +1226,7 @@ Height = [Colors] * 20
     </Node>
     <Node ToolID="66">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="1626" y="678" />
+        <Position x="1626" y="930" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1318,7 +1256,7 @@ Height = [Colors] * 20
     </Node>
     <Node ToolID="68">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="1338" y="594" />
+        <Position x="1338" y="846" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1339,23 +1277,9 @@ Height = [Colors] * 20
       </Properties>
       <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
     </Node>
-    <Node ToolID="71">
-      <GuiSettings Plugin="PreviewImage">
-        <Position x="1710" y="198" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="PreviewImageEntry" />
-    </Node>
     <Node ToolID="72">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="282" y="342" />
+        <Position x="282" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1377,7 +1301,7 @@ ENDIF
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
           </RecordInfo>
           <SortInfo>
@@ -1390,7 +1314,7 @@ ENDIF
     </Node>
     <Node ToolID="73">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="378" y="426" />
+        <Position x="378" y="510" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1409,7 +1333,7 @@ ENDIF
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Side" size="2147483647" source="Summarize: GroupBy - Side" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
           <SortInfo>
             <Field field="Category" order="Asc" />
@@ -1421,7 +1345,7 @@ ENDIF
     </Node>
     <Node ToolID="74">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="474" y="342" />
+        <Position x="474" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -1454,7 +1378,7 @@ ENDIF
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
           </RecordInfo>
           <SortInfo noProgress="True">
@@ -1466,9 +1390,9 @@ ENDIF
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
-            <Field name="Value" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Value" source="Summarize: Sum - Value" type="Double" />
             <Field name="Side" size="2147483647" source="Formula: IF   [Value] &lt; 0&#xA;THEN 'Negative'&#xA;ELSE 'Positive'&#xA;ENDIF" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
           <SortInfo>
             <Field field="Category" order="" />
@@ -1479,7 +1403,7 @@ ENDIF
           <RecordInfo>
             <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
             <Field name="Side" size="2147483647" source="Summarize: GroupBy - Side" type="V_String" />
-            <Field name="Side Total" source="Summarize: Sum - Value" type="Int64" />
+            <Field name="Side Total" source="Summarize: Sum - Value" type="Double" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="Category" />
@@ -1491,7 +1415,7 @@ ENDIF
     </Node>
     <Node ToolID="75">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-        <Position x="750" y="54" width="59" height="59" />
+        <Position x="846" y="54" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -1504,7 +1428,7 @@ ENDIF
     </Node>
     <Node ToolID="76">
       <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="750" y="138" width="59" height="59" />
+        <Position x="846" y="138" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -1517,7 +1441,7 @@ ENDIF
     </Node>
     <Node ToolID="77">
       <GuiSettings>
-        <Position x="1530" y="678" />
+        <Position x="1530" y="930" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1548,7 +1472,7 @@ Height=Height
     </Node>
     <Node ToolID="78">
       <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="810" y="138" width="59" height="59" />
+        <Position x="906" y="138" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -1559,11 +1483,415 @@ Height=Height
         </Annotation>
       </Properties>
     </Node>
+    <Node ToolID="79">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="80">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
+        <Position x="1026" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>ShowX</Name>
+          <DefaultAnnotationText>ShowX</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
+        <Position x="1422" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>xAlign</Name>
+          <DefaultAnnotationText>xAlign</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="84">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="1170" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>xHeight</Name>
+          <DefaultAnnotationText>xHeight</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="85">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="1290" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>xLabelSize</Name>
+          <DefaultAnnotationText>xLabelSize</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="86">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="186" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[width]" field="Canvas Width" size="8" type="Int64" />
+            <FormulaField expression="IF   LowerCase(&quot;%Question.ShowX%&quot;) = 'true'&#xA;THEN [height] - %Question.xHeight%&#xA;ELSE [height]&#xA;ENDIF" field="Canvas Height" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>canvas size</AnnotationText>
+          <DefaultAnnotationText>Canvas Width = [width]
+Canvas Height = IF   LowerCase("%Question.ShowX%") = 'tru...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="image" size="2147483647" source="New Image" type="Blob" />
+            <Field name="width" source="New Image" type="Int32" />
+            <Field name="height" source="New Image" type="Int32" />
+            <Field name="Canvas Width" source="Formula: [width]" type="Int64" />
+            <Field name="Canvas Height" source="Formula: IF   LowerCase(&quot;True&quot;) = 'true'&#xA;THEN [height] - 18&#xA;ELSE [height]&#xA;ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="762" y="678" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>LowerCase("%Question.ShowX%") = 'true'</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>X Axis</AnnotationText>
+          <DefaultAnnotationText>LowerCase("%Question.ShowX%") = 'true'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
+            <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Location" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
+            <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Location" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="91">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="858" y="762" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Location" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Summarize: Count - Location" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="92">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="954" y="678" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_Location" selected="True" input="Target_" />
+                <SelectField field="Target_Category" selected="True" input="Target_" />
+                <SelectField field="Source_Count" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
+            <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
+            <Field name="Count" source="Summarize: Count - Location" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="93">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1050" y="678" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="%Question.Width% / [Count]" field="Label Width" size="8" type="Double" />
+            <FormulaField expression="[Label Width] / 2" field="Midpoint" size="8" type="Double" />
+            <FormulaField expression="[Location] * [Label Width] + [Midpoint]" field="X" size="8" type="Double" />
+            <FormulaField expression="%Question.Height% - %Question.xHeight% + %Question.xPadding%" field="Y" size="8" type="Double" />
+            <FormulaField expression="&quot;middle&quot;" field="Horizontal" size="6" type="String" />
+            <FormulaField expression="'%Question.xAlign%'" field="Vertical" size="2147483647" type="V_String" />
+            <FormulaField expression="%Question.xLabelSize%" field="Size" size="8" type="Int64" />
+            <FormulaField expression="&quot;%Question.Font%&quot;" field="Font" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>labels</AnnotationText>
+          <DefaultAnnotationText>Label Width = %Question.Width% / [Count]
+Midpoint = [Label Width] / 2
+X = [Locat...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
+            <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
+            <Field name="Count" source="Summarize: Count - Location" type="Int64" />
+            <Field name="Label Width" source="Formula: 500 / [Count]" type="Double" />
+            <Field name="Midpoint" source="Formula: [Label Width] / 2" type="Double" />
+            <Field name="X" source="Formula: [Location] * [Label Width] + [Midpoint]" type="Double" />
+            <Field name="Y" source="Formula: 500 - 18 + 4" type="Double" />
+            <Field name="Horizontal" size="6" source="Formula: &quot;middle&quot;" type="String" />
+            <Field name="Vertical" size="2147483647" source="Formula: 'top'" type="V_String" />
+            <Field name="Size" source="Formula: 12" type="Int64" />
+            <Field name="Font" size="2147483647" source="Formula: &quot;C:\Windows\Fonts\arial.ttf&quot;" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="94">
+      <GuiSettings Plugin="DrawText">
+        <Position x="1626" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ImageField>image</ImageField>
+          <TextField>Category</TextField>
+          <XField>X</XField>
+          <YField>Y</YField>
+          <SizeField>Size</SizeField>
+          <FontField>Font</FontField>
+          <JustificationField>Horizontal</JustificationField>
+          <VerticalAlignmentField>Vertical</VerticalAlignmentField>
+          <RotationField>
+          </RotationField>
+          <ColorField>
+          </ColorField>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="image" type="Blob" source="Draw Text" size="20" scale="0">
+            </Field>
+            <Field name="width" type="Int32" source="Draw Text" size="4" scale="0">
+            </Field>
+            <Field name="height" type="Int32" source="Draw Text" size="4" scale="0">
+            </Field>
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="DrawTextEntry" />
+    </Node>
+    <Node ToolID="95">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+        <Position x="390" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>Font</Name>
+          <DefaultAnnotationText>Font</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="96">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="1554" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>xPadding</Name>
+          <DefaultAnnotationText>xPadding</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="97">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="954" y="762" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="0" field="x1" size="8" type="Int64" />
+            <FormulaField expression="%Question.Height% - %Question.xHeight% + 0.5" field="y1" size="8" type="Double" />
+            <FormulaField expression="%Question.Width%" field="x2" size="8" type="Int64" />
+            <FormulaField expression="[y1]" field="y2" size="8" type="Double" />
+            <FormulaField expression="1" field="width" size="8" type="Double" />
+            <FormulaField expression="'A'" field="group" size="1" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>line</AnnotationText>
+          <DefaultAnnotationText>x1 = 0
+y1 = %Question.Height% - %Question.xHeight% + 0.5
+x2 = %Question.Width%
+y...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Summarize: Count - Location" type="Int64" />
+            <Field name="x1" source="Formula: 0" type="Int64" />
+            <Field name="y1" source="Formula: 500 - 18 + 0.5" type="Double" />
+            <Field name="x2" source="Formula: 500" type="Int64" />
+            <Field name="y2" source="Formula: [y1]" type="Double" />
+            <Field name="width" source="Formula: 1" type="Double" />
+            <Field name="group" size="1" source="Formula: 'A'" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="DrawPrimitives">
+        <Position x="1722" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ImageField>image</ImageField>
+          <LineWidth>width</LineWidth>
+          <LineColor>
+          </LineColor>
+          <LineDash>
+          </LineDash>
+          <LineEndCap>
+          </LineEndCap>
+          <FillColor>
+          </FillColor>
+          <TypeOf>Path</TypeOf>
+          <Group>group</Group>
+          <PathX1>x1</PathX1>
+          <PathY1>y1</PathY1>
+          <PathX2>x2</PathX2>
+          <PathY2>y2</PathY2>
+          <PathX3>
+          </PathX3>
+          <PathY3>
+          </PathY3>
+          <PathX4>
+          </PathX4>
+          <PathY4>
+          </PathY4>
+          <X>
+          </X>
+          <Y>
+          </Y>
+          <Radius>
+          </Radius>
+          <Width>
+          </Width>
+          <Height>
+          </Height>
+          <Sides>
+          </Sides>
+          <CornerRadius>
+          </CornerRadius>
+          <Rotation>
+          </Rotation>
+          <StartAngle>
+          </StartAngle>
+          <EndAngle>
+          </EndAngle>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="image" type="Blob" source="Draw Primitives" size="20" scale="0">
+            </Field>
+            <Field name="width" type="Int32" source="Draw Primitives" size="4" scale="0">
+            </Field>
+            <Field name="height" type="Int32" source="Draw Primitives" size="4" scale="0">
+            </Field>
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="DrawPrimitivesEntry" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
       <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="19" Connection="Input" />
+      <Destination ToolID="86" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="2" Connection="Output" />
@@ -1594,7 +1922,7 @@ Height=Height
       <Destination ToolID="11" Connection="Primitives" />
     </Connection>
     <Connection>
-      <Origin ToolID="19" Connection="Output" />
+      <Origin ToolID="86" Connection="Output" />
       <Destination ToolID="11" Connection="Image" />
     </Connection>
     <Connection>
@@ -1603,19 +1931,15 @@ Height=Height
     </Connection>
     <Connection>
       <Origin ToolID="11" Connection="Output" />
-      <Destination ToolID="13" Connection="Image" />
+      <Destination ToolID="94" Connection="Image" />
     </Connection>
-    <Connection name="#2" Wireless="True">
-      <Origin ToolID="76" Connection="Action" />
-      <Destination ToolID="13" Connection="Action" />
+    <Connection>
+      <Origin ToolID="93" Connection="Output" />
+      <Destination ToolID="94" Connection="Texts" />
     </Connection>
     <Connection>
       <Origin ToolID="13" Connection="Output" />
       <Destination ToolID="28" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="13" Connection="Output" />
-      <Destination ToolID="71" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="15" Connection="Output" />
@@ -1636,14 +1960,6 @@ Height=Height
     <Connection name="#1" Wireless="True">
       <Origin ToolID="18" Connection="Question" />
       <Destination ToolID="22" Connection="Question" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="19" Connection="Output" />
-      <Destination ToolID="20" Connection="Source" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="35" Connection="Output" />
-      <Destination ToolID="20" Connection="Targets" />
     </Connection>
     <Connection>
       <Origin ToolID="20" Connection="Output" />
@@ -1682,6 +1998,14 @@ Height=Height
       <Destination ToolID="34" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="20" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="86" Connection="Output" />
+      <Destination ToolID="20" Connection="Source" />
+    </Connection>
+    <Connection>
       <Origin ToolID="36" Connection="Output" />
       <Destination ToolID="37" Connection="Input" />
     </Connection>
@@ -1692,6 +2016,10 @@ Height=Height
     <Connection>
       <Origin ToolID="74" Connection="Join" />
       <Destination ToolID="31" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="89" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="39" Connection="Output" />
@@ -1785,9 +2113,45 @@ Height=Height
       <Origin ToolID="75" Connection="Question" />
       <Destination ToolID="78" Connection="Question" />
     </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="76" Connection="Action" />
+      <Destination ToolID="13" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="98" Connection="Output" />
+      <Destination ToolID="13" Connection="Image" />
+    </Connection>
     <Connection>
       <Origin ToolID="77" Connection="Legend" />
       <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="89" Connection="True" />
+      <Destination ToolID="91" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="89" Connection="True" />
+      <Destination ToolID="92" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="91" Connection="Output" />
+      <Destination ToolID="92" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="91" Connection="Output" />
+      <Destination ToolID="97" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="92" Connection="Output" />
+      <Destination ToolID="93" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="94" Connection="Output" />
+      <Destination ToolID="98" Connection="Image" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="97" Connection="Output" />
+      <Destination ToolID="98" Connection="Primitives" />
     </Connection>
   </Connections>
   <Properties>
@@ -1811,30 +2175,24 @@ Height=Height
       <Constant>
         <Namespace>Question</Namespace>
         <Name>Width</Name>
-        <Value />
+        <Value>500</Value>
         <IsNumeric value="True" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>Height</Name>
-        <Value />
+        <Value>500</Value>
         <IsNumeric value="True" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
+        <Name>Font</Name>
+        <Value>C:\Windows\Fonts\arial.ttf</Value>
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
         <Name>Background</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Macro Input (2)</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Macro Output (28)</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -1846,14 +2204,38 @@ Height=Height
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Macro Output (66)</Name>
+        <Name>SaveTo</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>SaveTo</Name>
-        <Value />
+        <Name>xPadding</Name>
+        <Value>4</Value>
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>xHeight</Name>
+        <Value>18</Value>
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>xLabelSize</Name>
+        <Value>12</Value>
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>xAlign</Name>
+        <Value>top</Value>
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>ShowX</Name>
+        <Value>True</Value>
         <IsNumeric value="False" />
       </Constant>
     </Constants>
@@ -1991,6 +2373,16 @@ ENDIF</Expression>
             </Question>
             <Question>
               <Type>TextBox</Type>
+              <Description>Font</Description>
+              <Name>Font</Name>
+              <ToolId value="95" />
+              <Default>C:\Windows\Fonts\arial.ttf</Default>
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
               <Description>Background Color</Description>
               <Name>Background</Name>
               <ToolId value="24" />
@@ -2039,6 +2431,70 @@ ENDIF</Expression>
             </Question>
           </Questions>
         </Question>
+        <Question>
+          <Type>Tab</Type>
+          <Description>X Axis</Description>
+          <Name>Tab (79)</Name>
+          <ToolId value="79" />
+          <Questions>
+            <Question>
+              <Type>BooleanGroup</Type>
+              <Description>Show X Axis</Description>
+              <Name>ShowX</Name>
+              <ToolId value="80" />
+              <Questions>
+                <Question>
+                  <Type>NumericUpDown</Type>
+                  <Description>Height</Description>
+                  <Name>xHeight</Name>
+                  <ToolId value="84" />
+                  <Minimum value="0" />
+                  <Maximum value="9999999" />
+                  <Increment value="1" />
+                  <Default value="18" />
+                  <Decimals value="0" />
+                </Question>
+                <Question>
+                  <Type>NumericUpDown</Type>
+                  <Description>Label Size</Description>
+                  <Name>xLabelSize</Name>
+                  <ToolId value="85" />
+                  <Minimum value="0" />
+                  <Maximum value="9999999" />
+                  <Increment value="1" />
+                  <Default value="12" />
+                  <Decimals value="0" />
+                </Question>
+                <Question>
+                  <Type>NumericUpDown</Type>
+                  <Description>Padding</Description>
+                  <Name>xPadding</Name>
+                  <ToolId value="96" />
+                  <Minimum value="0" />
+                  <Maximum value="9999999" />
+                  <Increment value="1" />
+                  <Default value="4" />
+                  <Decimals value="0" />
+                </Question>
+                <Question>
+                  <Type>ListBox</Type>
+                  <Description>Alignment</Description>
+                  <Name>xAlign</Name>
+                  <ToolId value="82" />
+                  <Multiple value="False" />
+                  <Default>Top</Default>
+                  <Mode>Manual</Mode>
+                  <Manual_Values><![CDATA[Top
+Middle
+Bottom
+]]></Manual_Values>
+                </Question>
+              </Questions>
+              <Default value="False" />
+              <Collapsable value="False" />
+            </Question>
+          </Questions>
+        </Question>
       </Questions>
       <ModuleType>Macro</ModuleType>
       <MacroCustomHelp value="False" />
@@ -2055,9 +2511,10 @@ ENDIF</Expression>
         <Tool ToolId="11" Selected="True" />
         <Tool ToolId="13" Selected="True" />
         <Tool ToolId="28" Selected="True" />
-        <Tool ToolId="71" Selected="True" />
         <Tool ToolId="66" Selected="True" />
         <Tool ToolId="77" Selected="True" />
+        <Tool ToolId="94" Selected="True" />
+        <Tool ToolId="98" Selected="True" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />

@@ -54,7 +54,7 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="30">
+    <Node ToolID="78">
       <GuiSettings>
         <Position x="426" y="54" />
       </GuiSettings>
@@ -62,6 +62,7 @@
         <Configuration>
           <Value name="Width">500</Value>
           <Value name="Height">500</Value>
+          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
           <Value name="Background">#FFFFFF</Value>
           <Value name="Input.Data"><![CDATA[Category=Category
 Value=Value
@@ -69,6 +70,11 @@ Color=Color
 ]]></Value>
           <Value name="BarColors">#0000FF</Value>
           <Value name="SaveTo">Test Results\3 positive blue bars.png</Value>
+          <Value name="xPadding">50</Value>
+          <Value name="ShowX">False</Value>
+          <Value name="xHeight">18</Value>
+          <Value name="xLabelSize">12</Value>
+          <Value name="xAlign">Top</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>StaticBarChart (2)</Name>
@@ -165,7 +171,7 @@ Color=Color
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="31">
+    <Node ToolID="77">
       <GuiSettings>
         <Position x="426" y="138" />
       </GuiSettings>
@@ -173,14 +179,20 @@ Color=Color
         <Configuration>
           <Value name="Width">500</Value>
           <Value name="Height">500</Value>
+          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
           <Value name="Background">#FFFFFF</Value>
           <Value name="Input.Data"><![CDATA[Category=Category
-Value=Value
 Color=Color
+Value=Value
 ]]></Value>
           <Value name="BarColors">#0000FF
 #FF0000</Value>
           <Value name="SaveTo">Test Results\3 positive blue red bars.png</Value>
+          <Value name="ShowX">False</Value>
+          <Value name="xHeight">18</Value>
+          <Value name="xLabelSize">12</Value>
+          <Value name="xPadding">4</Value>
+          <Value name="xAlign">Top</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>StaticBarChart (7)</Name>
@@ -224,7 +236,7 @@ Color=Color
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="32">
+    <Node ToolID="76">
       <GuiSettings>
         <Position x="522" y="222" />
       </GuiSettings>
@@ -232,14 +244,20 @@ Color=Color
         <Configuration>
           <Value name="Width">500</Value>
           <Value name="Height">500</Value>
+          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
           <Value name="Background">#FFFFFF</Value>
           <Value name="Input.Data"><![CDATA[Category=Category
-Value=Value
 Color=Color
+Value=Value
 ]]></Value>
           <Value name="BarColors">#0000FF
 #FF0000</Value>
           <Value name="SaveTo">Test Results\3 negative blue red bars.png</Value>
+          <Value name="ShowX">False</Value>
+          <Value name="xHeight">18</Value>
+          <Value name="xLabelSize">12</Value>
+          <Value name="xPadding">4</Value>
+          <Value name="xAlign">Top</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>StaticBarChart (11)</Name>
@@ -392,7 +410,7 @@ Color=Color
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="33">
+    <Node ToolID="75">
       <GuiSettings>
         <Position x="426" y="390" />
       </GuiSettings>
@@ -400,14 +418,20 @@ Color=Color
         <Configuration>
           <Value name="Width">500</Value>
           <Value name="Height">500</Value>
+          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
           <Value name="Background">#FFFFFF</Value>
           <Value name="Input.Data"><![CDATA[Category=Category
-Value=Value
 Color=Color
+Value=Value
 ]]></Value>
           <Value name="BarColors">#0000FF
 #FF0000</Value>
           <Value name="SaveTo">Test Results\3 blue red bars positive and negative.png</Value>
+          <Value name="ShowX">False</Value>
+          <Value name="xHeight">18</Value>
+          <Value name="xLabelSize">12</Value>
+          <Value name="xPadding">4</Value>
+          <Value name="xAlign">Top</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>StaticBarChart (16)</Name>
@@ -616,7 +640,94 @@ Color=Color
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
-    <Node ToolID="34">
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="330" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="6" />
+          <Fields>
+            <Field name="Category" />
+            <Field name="Color" />
+            <Field name="Value" />
+          </Fields>
+          <Data>
+            <r>
+              <c>A</c>
+              <c>Z</c>
+              <c>14</c>
+            </r>
+            <r>
+              <c>A</c>
+              <c>Z</c>
+              <c>64</c>
+            </r>
+            <r>
+              <c>B</c>
+              <c>Z</c>
+              <c>1.1</c>
+            </r>
+            <r>
+              <c>B</c>
+              <c>Z</c>
+              <c>5.4</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>Z</c>
+              <c>3</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>Z</c>
+              <c>19</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="PreviewImage">
+        <Position x="522" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="PreviewImageEntry" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="474" width="240" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>3 blue bars, all positive, top-aligned x axis</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="74">
       <GuiSettings>
         <Position x="426" y="306" />
       </GuiSettings>
@@ -624,17 +735,53 @@ Color=Color
         <Configuration>
           <Value name="Width">500</Value>
           <Value name="Height">500</Value>
+          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
           <Value name="Background">#FFFFFF</Value>
           <Value name="Input.Data"><![CDATA[Category=Category
-Value=Value
 Color=Color
+Value=Value
 ]]></Value>
           <Value name="BarColors">#0000FF
 #FF0000</Value>
           <Value name="SaveTo">Test Results\blue and red legend test.png</Value>
+          <Value name="ShowX">True</Value>
+          <Value name="xHeight">16</Value>
+          <Value name="xLabelSize">12</Value>
+          <Value name="xPadding">50</Value>
+          <Value name="xAlign">Top</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>StaticBarChart (20)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="F:\repositories\StaticCharts\StaticBarChart\StaticBarChart.yxmc" />
+    </Node>
+    <Node ToolID="79">
+      <GuiSettings>
+        <Position x="426" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Width">500</Value>
+          <Value name="Height">500</Value>
+          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
+          <Value name="Background">#FFFFFF</Value>
+          <Value name="Input.Data"><![CDATA[Category=Category
+Color=Color
+Value=Value
+]]></Value>
+          <Value name="BarColors">#0000FF</Value>
+          <Value name="SaveTo">Test Results\3 positive blue bars x axis top.png</Value>
+          <Value name="ShowX">True</Value>
+          <Value name="xHeight">20</Value>
+          <Value name="xLabelSize">12</Value>
+          <Value name="xPadding">4</Value>
+          <Value name="xAlign">Top</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>StaticBarChart (41)</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -645,55 +792,63 @@ Color=Color
   <Connections>
     <Connection>
       <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="30" Connection="Data" />
+      <Destination ToolID="78" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="30" Connection="Chart" />
+      <Origin ToolID="78" Connection="Chart" />
       <Destination ToolID="4" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output" />
-      <Destination ToolID="31" Connection="Data" />
+      <Destination ToolID="77" Connection="Data" />
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output" />
       <Destination ToolID="14" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="31" Connection="Chart" />
+      <Origin ToolID="77" Connection="Chart" />
       <Destination ToolID="8" Connection="Image" />
     </Connection>
     <Connection>
-      <Origin ToolID="32" Connection="Chart" />
+      <Origin ToolID="76" Connection="Chart" />
       <Destination ToolID="12" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="14" Connection="Output" />
-      <Destination ToolID="32" Connection="Data" />
+      <Destination ToolID="76" Connection="Data" />
     </Connection>
     <Connection>
       <Origin ToolID="15" Connection="Output" />
-      <Destination ToolID="33" Connection="Data" />
+      <Destination ToolID="75" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="33" Connection="Chart" />
+      <Origin ToolID="75" Connection="Chart" />
       <Destination ToolID="17" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="19" Connection="Output" />
-      <Destination ToolID="34" Connection="Data" />
+      <Destination ToolID="74" Connection="Data" />
     </Connection>
     <Connection name="#1">
       <Origin ToolID="29" Connection="Output" />
       <Destination ToolID="28" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="34" Connection="Legend" />
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="79" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="74" Connection="Legend" />
       <Destination ToolID="21" Connection="Image" />
     </Connection>
     <Connection>
-      <Origin ToolID="34" Connection="Legend" />
+      <Origin ToolID="74" Connection="Legend" />
       <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="Chart" />
+      <Destination ToolID="42" Connection="Image" />
     </Connection>
   </Connections>
   <Properties>
