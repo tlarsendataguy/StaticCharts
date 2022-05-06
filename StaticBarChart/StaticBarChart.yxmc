@@ -51,32 +51,32 @@
               <Data>
                 <r>
                   <c>A</c>
-                  <c>Z</c>
+                  <c>W</c>
                   <c>14</c>
                 </r>
                 <r>
                   <c>A</c>
-                  <c>Z</c>
+                  <c>X</c>
                   <c>64</c>
                 </r>
                 <r>
                   <c>B</c>
-                  <c>Z</c>
+                  <c>W</c>
                   <c>1.1</c>
                 </r>
                 <r>
                   <c>B</c>
-                  <c>Z</c>
+                  <c>X</c>
                   <c>5.4</c>
                 </r>
                 <r>
                   <c>C</c>
-                  <c>Z</c>
+                  <c>W</c>
                   <c>3</c>
                 </r>
                 <r>
                   <c>C</c>
-                  <c>Z</c>
+                  <c>X</c>
                   <c>19</c>
                 </r>
               </Data>
@@ -394,8 +394,8 @@ Range Ratio = ...</DefaultAnnotationText>
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField expression="Min(0, [Min])" field="Min" size="8" type="Int64" />
-            <FormulaField expression="MAX(0, [Max])" field="Max" size="8" type="Int64" />
+            <FormulaField expression="Min(0, [Min])" field="Min" size="8" type="Double" />
+            <FormulaField expression="MAX(0, [Max])" field="Max" size="8" type="Double" />
             <FormulaField expression="[Max] - [Min]" field="Range" size="8" type="Double" />
           </FormulaFields>
         </Configuration>
@@ -1202,23 +1202,25 @@ ELSE [Row-1:Color...</DefaultAnnotationText>
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField expression="500" field="Width" size="8" type="Double" />
-            <FormulaField expression="[Colors] * 20" field="Height" size="8" type="Double" />
+            <FormulaField expression="[text width] + 24" field="Width" size="8" type="Double" />
+            <FormulaField expression="[text height] + (4 * [Count])" field="Height" size="8" type="Double" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText>Size</AnnotationText>
-          <DefaultAnnotationText><![CDATA[Width = 500
-Height = [Colors] * 20
+          <DefaultAnnotationText><![CDATA[Width = [text width] + 24
+Height = [text height] + (4 * [Count])
 ]]></DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Colors" source="Summarize: Count - Color" type="Int64" />
-            <Field name="Width" source="Formula: 500" type="Double" />
-            <Field name="Height" source="Formula: [Colors] * 20" type="Double" />
+            <Field name="text width" source="Measure String" type="Double" />
+            <Field name="text height" source="Summarize: Sum - text height" type="Double" />
+            <Field name="Count" source="Summarize: Count - Color" type="Int64" />
+            <Field name="Width" source="Formula: [text width] + 24" type="Double" />
+            <Field name="Height" source="Formula: [text height] + (4 * [Count])" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -1226,7 +1228,7 @@ Height = [Colors] * 20
     </Node>
     <Node ToolID="66">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="1626" y="930" />
+        <Position x="1722" y="930" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1241,19 +1243,6 @@ Height = [Colors] * 20
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
     </Node>
-    <Node ToolID="67">
-      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="114" y="138" width="59" height="59" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="2">
-          <Name />
-          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-    </Node>
     <Node ToolID="68">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
         <Position x="1338" y="846" />
@@ -1261,7 +1250,9 @@ Height = [Colors] * 20
       <Properties>
         <Configuration>
           <SummarizeFields>
-            <SummarizeField field="Color" action="Count" rename="Colors" />
+            <SummarizeField field="text width" action="Max" rename="text width" />
+            <SummarizeField field="text height" action="Sum" rename="text height" />
+            <SummarizeField field="Color" action="Count" rename="Count" />
           </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -1271,7 +1262,9 @@ Height = [Colors] * 20
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Colors" source="Summarize: Count - Color" type="Int64" />
+            <Field name="text width" source="Measure String" type="Double" />
+            <Field name="text height" source="Summarize: Sum - text height" type="Double" />
+            <Field name="Count" source="Summarize: Count - Color" type="Int64" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -1439,7 +1432,7 @@ ENDIF
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="77">
+    <Node ToolID="108">
       <GuiSettings>
         <Position x="1530" y="930" />
       </GuiSettings>
@@ -1449,7 +1442,6 @@ ENDIF
           <Value name="Input.Input"><![CDATA[Label=Color
 Color=Fill Color
 ]]></Value>
-          <Value name="Save To">F:\Temp\Legend.png</Value>
           <Value name="ControlParams"><![CDATA[Width=Width
 Height=Height
 ]]></Value>
@@ -1459,12 +1451,11 @@ Height=Height
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Legend">
           <RecordInfo>
-            <Field name="image path" size="2147483647" source="Export Image (BatchMacro)" type="V_String" />
+            <Field name="image" size="2147483647" source="Draw Text (BatchMacro)" type="Blob" />
+            <Field name="width" source="Draw Text (BatchMacro)" type="Int32" />
+            <Field name="height" source="Draw Text (BatchMacro)" type="Int32" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -1689,6 +1680,7 @@ Canvas Height = IF   LowerCase("%Question.ShowX%") = 'tru...</DefaultAnnotationT
             <FormulaField expression="'%Question.xAlign%'" field="Vertical" size="2147483647" type="V_String" />
             <FormulaField expression="%Question.xLabelSize%" field="Size" size="8" type="Int64" />
             <FormulaField expression="&quot;%Question.Font%&quot;" field="Font" size="2147483647" type="V_String" />
+            <FormulaField expression="%Question.Width% / 3.0" field="Max Width" size="8" type="Double" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -1712,6 +1704,7 @@ X = [Locat...</DefaultAnnotationText>
             <Field name="Vertical" size="2147483647" source="Formula: 'top'" type="V_String" />
             <Field name="Size" source="Formula: 12" type="Int64" />
             <Field name="Font" size="2147483647" source="Formula: &quot;C:\Windows\Fonts\arial.ttf&quot;" type="V_String" />
+            <Field name="Max Width" source="Formula: 500 / 3.0" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -1729,6 +1722,7 @@ X = [Locat...</DefaultAnnotationText>
           <YField>Y</YField>
           <SizeField>Size</SizeField>
           <FontField>Font</FontField>
+          <MaxWidthField>Max Width</MaxWidthField>
           <JustificationField>Horizontal</JustificationField>
           <VerticalAlignmentField>Vertical</VerticalAlignmentField>
           <RotationField>
@@ -1887,6 +1881,94 @@ y...</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="DrawPrimitivesEntry" />
     </Node>
+    <Node ToolID="99">
+      <GuiSettings Plugin="MeasureText">
+        <Position x="1242" y="846" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TextField>Color</TextField>
+          <SizeField>Text Size</SizeField>
+          <FontField>Font</FontField>
+          <MaxWidthField>
+          </MaxWidthField>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Color" type="String" source="Summarize: GroupBy - Color" size="1" scale="0">
+            </Field>
+            <Field name="Fill Color" type="String" source="TextToColumns: Parsed from Fill Color" size="15" scale="0">
+            </Field>
+            <Field name="Text Size" type="Double" source="Formula: 16" size="8" scale="0">
+            </Field>
+            <Field name="Font" type="V_WString" source="Formula: &quot;C:\Windows\Fonts\arial.ttf&quot;" size="1073741823" scale="0">
+            </Field>
+            <Field name="text width" type="Double" source="Measure String" size="8" scale="0">
+            </Field>
+            <Field name="text height" type="Double" source="Measure String" size="8" scale="0">
+            </Field>
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="MeasureTextEntry" />
+    </Node>
+    <Node ToolID="100">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1146" y="846" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="16" field="Text Size" size="8" type="Double" />
+            <FormulaField expression="&quot;%Question.Font%&quot;" field="Font" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Text Size = 16
+Font = "%Question.Font%"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
+            <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
+            <Field name="Text Size" source="Formula: 16" type="Double" />
+            <Field name="Font" size="1073741823" source="Formula: &quot;C:\Windows\Fonts\arial.ttf&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="109">
+      <GuiSettings Plugin="ExportImage">
+        <Position x="1626" y="930" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ImageField>image</ImageField>
+          <SaveAs>f:\temp\bar chart legend.png</SaveAs>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="image path" type="V_String" source="Export Image" size="2147483647" scale="0">
+            </Field>
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="ExportImageEntry" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
@@ -1952,10 +2034,6 @@ y...</DefaultAnnotationText>
     <Connection name="#1" Wireless="True">
       <Origin ToolID="17" Connection="Question" />
       <Destination ToolID="21" Connection="Question" />
-    </Connection>
-    <Connection name="#1" Wireless="True">
-      <Origin ToolID="17" Connection="Question" />
-      <Destination ToolID="67" Connection="Question" />
     </Connection>
     <Connection name="#1" Wireless="True">
       <Origin ToolID="18" Connection="Question" />
@@ -2063,27 +2141,19 @@ y...</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="49" Connection="Join" />
-      <Destination ToolID="77" Connection="Input" />
+      <Destination ToolID="108" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="64" Connection="Output" />
-      <Destination ToolID="77" Connection="Control" />
-    </Connection>
-    <Connection name="#2" Wireless="True">
-      <Origin ToolID="78" Connection="Action" />
-      <Destination ToolID="77" Connection="Action" />
+      <Destination ToolID="108" Connection="Control" />
     </Connection>
     <Connection>
       <Origin ToolID="49" Connection="Join" />
-      <Destination ToolID="68" Connection="Input" />
+      <Destination ToolID="100" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="50" Connection="Join" />
       <Destination ToolID="5" Connection="Input" />
-    </Connection>
-    <Connection name="#2" Wireless="True">
-      <Origin ToolID="67" Connection="Action" />
-      <Destination ToolID="64" Connection="Action" />
     </Connection>
     <Connection>
       <Origin ToolID="68" Connection="Output" />
@@ -2122,8 +2192,12 @@ y...</DefaultAnnotationText>
       <Destination ToolID="13" Connection="Image" />
     </Connection>
     <Connection>
-      <Origin ToolID="77" Connection="Legend" />
-      <Destination ToolID="66" Connection="Input" />
+      <Origin ToolID="108" Connection="Legend" />
+      <Destination ToolID="109" Connection="Image" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="78" Connection="Action" />
+      <Destination ToolID="109" Connection="Action" />
     </Connection>
     <Connection>
       <Origin ToolID="89" Connection="True" />
@@ -2152,6 +2226,18 @@ y...</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="97" Connection="Output" />
       <Destination ToolID="98" Connection="Primitives" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="99" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="100" Connection="Output" />
+      <Destination ToolID="99" Connection="Texts" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="109" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -2313,15 +2399,6 @@ column	1</DynamicConfiguration>
             <Action>
               <Type>UpdateValue</Type>
               <Description />
-              <ToolId value="67" />
-              <Mode>Simple</Mode>
-              <Variable />
-              <Replace value="False" />
-              <Destination>64/FormulaFields/FormulaField[@field='Width']/@expression</Destination>
-            </Action>
-            <Action>
-              <Type>UpdateValue</Type>
-              <Description />
               <ToolId value="76" />
               <Mode>Simple</Mode>
               <Variable />
@@ -2336,7 +2413,7 @@ column	1</DynamicConfiguration>
 THEN Substring([#1], 0, Length([#1])-4) + " Legend.png"
 ELSE Substring([#1], 0, Length([#1])-4) + " Legend.jpg"
 ENDIF</Expression>
-              <Destination>77/Value[@name='Save To']</Destination>
+              <Destination>109/SaveAs</Destination>
               <Mode>Expression</Mode>
             </Action>
           </True>
@@ -2499,7 +2576,7 @@ Bottom
       <ModuleType>Macro</ModuleType>
       <MacroCustomHelp value="False" />
       <MacroDynamicOutputFields value="False" />
-      <MacroImage>iVBORw0KGgoAAAANSUhEUgAAAKsAAACrCAYAAAAZ6GwZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUJSURBVHhe7dGxjQNADMRAd/T9V+cvQAQzB9RpAGYbSZ9zzjk/8/f9ruksR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVznL09GpnOXp6tbMcPb3aWY6eXu0sR0+vdpajp1c7y9HTq53l6OnVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3Qvtqz6BjVDO2rPYuOUc3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXO+ec8xOfzz8RVgKhn9LB7wAAAABJRU5ErkJggg==</MacroImage>
+      <MacroImage>iVBORw0KGgoAAAANSUhEUgAAAKsAAACrCAYAAAAZ6GwZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAABQlJREFUeF7t0bGNA0AMxEB39P1X5y9ABDMH1GkAZhtJn3POOT/z9/2u6SxHT692lqOnVzvL0dOrneXo6dXOcvT0amc5enq1sxw9vdpZjp5e7SxHT692lqOnVzvL0dOrneXo6dXOcvT0amc5enq1sxw9vdpZjp5e7SxHT692lqOnVzvL0dOrneXo6dXOcvT0amc5enq1sxw9vdpZjp5e7SxHT692lqOnVzvL0dOrneXo6dXOcvT0amc5enq1sxw9vdpZjp5e7SxHT692lqOnVzvL0dOrneXo6dXOcvT0amc5enq1sxw9vdpZjp5e7SxHT692lqOnVzvL0dOrneXo6dXOcvT0amc5enq1sxw9vdpZjp5e7SxHT692lqOnVzvL0dOrneXo6dUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+2rPoGNUM7as9i45RzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lcbaFTN0L6aoX21gUbVDO2rGdpXG2hUzdC+mqF9tYFG1QztqxnaVxtoVM3QvpqhfbWBRtUM7asZ2lc755zzE5/PPxFWAqGf0sHvAAAAAElFTkSuQmCC</MacroImage>
       <MacroInputs />
       <MacroOutputs />
       <Wiz_CustomHelp value="False" />
@@ -2512,9 +2589,11 @@ Bottom
         <Tool ToolId="13" Selected="True" />
         <Tool ToolId="28" Selected="True" />
         <Tool ToolId="66" Selected="True" />
-        <Tool ToolId="77" Selected="True" />
+        <Tool ToolId="108" Selected="True" />
         <Tool ToolId="94" Selected="True" />
         <Tool ToolId="98" Selected="True" />
+        <Tool ToolId="99" Selected="True" />
+        <Tool ToolId="109" Selected="True" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />

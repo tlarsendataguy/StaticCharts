@@ -152,7 +152,7 @@ Airport Ownership Type Name = REGEX_Replace([Airport Ownership Type...</DefaultA
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
-    <Node ToolID="42">
+    <Node ToolID="46">
       <GuiSettings>
         <Position x="342" y="138" />
       </GuiSettings>
@@ -171,7 +171,7 @@ Value=Airports
 #00FF00</Value>
           <Value name="SaveTo">F:\Temp\Bar Chart.png</Value>
           <Value name="ShowX">True</Value>
-          <Value name="xHeight">92</Value>
+          <Value name="xHeight">100</Value>
           <Value name="xLabelSize">24</Value>
           <Value name="xPadding">8</Value>
           <Value name="xAlign">Top</Value>
@@ -181,9 +181,6 @@ Value=Airports
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings Macro="StaticBarChart\StaticBarChart.yxmc" />
     </Node>
@@ -495,14 +492,14 @@ As of [Date S...</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="42" Connection="Data" />
+      <Destination ToolID="46" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="42" Connection="Chart" />
+      <Origin ToolID="46" Connection="Chart" />
       <Destination ToolID="19" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="42" Connection="Legend" />
+      <Origin ToolID="46" Connection="Legend" />
       <Destination ToolID="20" Connection="Input" />
     </Connection>
     <Connection>

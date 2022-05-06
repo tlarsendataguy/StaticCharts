@@ -22,7 +22,7 @@
         <Configuration>
           <Width>100</Width>
           <Height>40</Height>
-          <Color>#ffffffff</Color>
+          <Color>#ffffff</Color>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -335,7 +335,7 @@ Font = "C:\Wi...</DefaultAnnotationText>
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="666" y="234" />
+        <Position x="570" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -349,29 +349,6 @@ Font = "C:\Wi...</DefaultAnnotationText>
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
-    </Node>
-    <Node ToolID="17">
-      <GuiSettings Plugin="ExportImage">
-        <Position x="570" y="234" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <ImageField>image</ImageField>
-          <SaveAs>f:\temp\Legend.png</SaveAs>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="image path" type="V_String" source="Export Image" size="2147483647" scale="0">
-            </Field>
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="ExportImageEntry" />
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.ControlParam.ControlParam">
@@ -395,32 +372,6 @@ Font = "C:\Wi...</DefaultAnnotationText>
         <Annotation DisplayMode="0">
           <Name>Width</Name>
           <DefaultAnnotationText>Width</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-    </Node>
-    <Node ToolID="18">
-      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-        <Position x="294" y="54" width="59" height="59" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="0">
-          <Name>Save To</Name>
-          <DefaultAnnotationText>Save To</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-    </Node>
-    <Node ToolID="19">
-      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="294" y="138" width="59" height="59" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="2">
-          <Name />
-          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -465,14 +416,6 @@ Font = "C:\Wi...</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="13" Connection="Output" />
-      <Destination ToolID="17" Connection="Image" />
-    </Connection>
-    <Connection name="#2" Wireless="True">
-      <Origin ToolID="19" Connection="Action" />
-      <Destination ToolID="17" Connection="Action" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="17" Connection="Output" />
       <Destination ToolID="16" Connection="Input" />
     </Connection>
     <Connection name="#1">
@@ -482,10 +425,6 @@ Font = "C:\Wi...</DefaultAnnotationText>
     <Connection name="#1">
       <Origin ToolID="2" Connection="Question" />
       <Destination ToolID="5" Connection="Question" />
-    </Connection>
-    <Connection name="#1" Wireless="True">
-      <Origin ToolID="18" Connection="Question" />
-      <Destination ToolID="19" Connection="Question" />
     </Connection>
   </Connections>
   <Properties>
@@ -527,12 +466,6 @@ Font = "C:\Wi...</DefaultAnnotationText>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>Macro Output (16)</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Save To</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -587,15 +520,6 @@ Font = "C:\Wi...</DefaultAnnotationText>
               <Replace value="False" />
               <Destination>4/Height</Destination>
             </Action>
-            <Action>
-              <Type>UpdateValue</Type>
-              <Description />
-              <ToolId value="19" />
-              <Mode>Simple</Mode>
-              <Variable />
-              <Replace value="False" />
-              <Destination>17/SaveAs</Destination>
-            </Action>
           </True>
         </NoCondition>
       </Actions>
@@ -630,16 +554,6 @@ Font = "C:\Wi...</DefaultAnnotationText>
               <Name>Macro Output (16)</Name>
               <ToolId value="16" />
             </Question>
-            <Question>
-              <Type>TextBox</Type>
-              <Description>Save To</Description>
-              <Name>Save To</Name>
-              <ToolId value="18" />
-              <Default />
-              <Password value="False" />
-              <Multiline value="False" />
-              <Hidden value="False" />
-            </Question>
           </Questions>
         </Question>
       </Questions>
@@ -671,7 +585,6 @@ Font = "C:\Wi...</DefaultAnnotationText>
         <Tool ToolId="11" Selected="True" />
         <Tool ToolId="13" Selected="True" />
         <Tool ToolId="16" Selected="True" />
-        <Tool ToolId="17" Selected="True" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />

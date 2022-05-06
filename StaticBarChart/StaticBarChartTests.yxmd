@@ -54,7 +54,7 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="78">
+    <Node ToolID="90">
       <GuiSettings>
         <Position x="426" y="54" />
       </GuiSettings>
@@ -65,15 +65,15 @@
           <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
           <Value name="Background">#FFFFFF</Value>
           <Value name="Input.Data"><![CDATA[Category=Category
-Value=Value
 Color=Color
+Value=Value
 ]]></Value>
           <Value name="BarColors">#0000FF</Value>
           <Value name="SaveTo">Test Results\3 positive blue bars.png</Value>
-          <Value name="xPadding">50</Value>
           <Value name="ShowX">False</Value>
           <Value name="xHeight">18</Value>
           <Value name="xLabelSize">12</Value>
+          <Value name="xPadding">50</Value>
           <Value name="xAlign">Top</Value>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -81,6 +81,9 @@ Color=Color
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings Macro="StaticBarChart.yxmc" />
     </Node>
@@ -171,7 +174,7 @@ Color=Color
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="77">
+    <Node ToolID="89">
       <GuiSettings>
         <Position x="426" y="138" />
       </GuiSettings>
@@ -236,7 +239,7 @@ Value=Value
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="76">
+    <Node ToolID="88">
       <GuiSettings>
         <Position x="522" y="222" />
       </GuiSettings>
@@ -410,7 +413,7 @@ Value=Value
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="75">
+    <Node ToolID="87">
       <GuiSettings>
         <Position x="426" y="390" />
       </GuiSettings>
@@ -727,7 +730,7 @@ Value=Value
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="74">
+    <Node ToolID="86">
       <GuiSettings>
         <Position x="426" y="306" />
       </GuiSettings>
@@ -758,7 +761,7 @@ Value=Value
       </Properties>
       <EngineSettings Macro="F:\repositories\StaticCharts\StaticBarChart\StaticBarChart.yxmc" />
     </Node>
-    <Node ToolID="79">
+    <Node ToolID="85">
       <GuiSettings>
         <Position x="426" y="474" />
       </GuiSettings>
@@ -875,7 +878,7 @@ Value=Value
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="83">
+    <Node ToolID="84">
       <GuiSettings>
         <Position x="426" y="558" />
       </GuiSettings>
@@ -893,12 +896,12 @@ Value=Value
           <Value name="SaveTo">Test Results\long x axis labels.png</Value>
           <Value name="ShowX">True</Value>
           <Value name="xHeight">40</Value>
-          <Value name="xLabelSize">18</Value>
+          <Value name="xLabelSize">12</Value>
           <Value name="xPadding">4</Value>
           <Value name="xAlign">Top</Value>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name />
+          <Name>StaticBarChart (83)</Name>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -912,43 +915,43 @@ Value=Value
   <Connections>
     <Connection>
       <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="78" Connection="Data" />
+      <Destination ToolID="90" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="78" Connection="Chart" />
+      <Origin ToolID="90" Connection="Chart" />
       <Destination ToolID="4" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output" />
-      <Destination ToolID="77" Connection="Data" />
+      <Destination ToolID="89" Connection="Data" />
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output" />
       <Destination ToolID="14" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="77" Connection="Chart" />
+      <Origin ToolID="89" Connection="Chart" />
       <Destination ToolID="8" Connection="Image" />
     </Connection>
     <Connection>
-      <Origin ToolID="76" Connection="Chart" />
+      <Origin ToolID="88" Connection="Chart" />
       <Destination ToolID="12" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="14" Connection="Output" />
-      <Destination ToolID="76" Connection="Data" />
+      <Destination ToolID="88" Connection="Data" />
     </Connection>
     <Connection>
       <Origin ToolID="15" Connection="Output" />
-      <Destination ToolID="75" Connection="Data" />
+      <Destination ToolID="87" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="75" Connection="Chart" />
+      <Origin ToolID="87" Connection="Chart" />
       <Destination ToolID="17" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="19" Connection="Output" />
-      <Destination ToolID="74" Connection="Data" />
+      <Destination ToolID="86" Connection="Data" />
     </Connection>
     <Connection name="#1">
       <Origin ToolID="29" Connection="Output" />
@@ -956,26 +959,26 @@ Value=Value
     </Connection>
     <Connection>
       <Origin ToolID="40" Connection="Output" />
-      <Destination ToolID="79" Connection="Data" />
+      <Destination ToolID="85" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="74" Connection="Legend" />
+      <Origin ToolID="86" Connection="Legend" />
       <Destination ToolID="21" Connection="Image" />
     </Connection>
     <Connection>
-      <Origin ToolID="74" Connection="Legend" />
+      <Origin ToolID="86" Connection="Legend" />
       <Destination ToolID="29" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="79" Connection="Chart" />
+      <Origin ToolID="85" Connection="Chart" />
       <Destination ToolID="42" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="80" Connection="Output" />
-      <Destination ToolID="83" Connection="Data" />
+      <Destination ToolID="84" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="83" Connection="Chart" />
+      <Origin ToolID="84" Connection="Chart" />
       <Destination ToolID="81" Connection="Image" />
     </Connection>
   </Connections>
