@@ -1,0 +1,1030 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="150" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="6" />
+              <Fields>
+                <Field name="Category" />
+                <Field name="Color" />
+                <Field name="Value" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>A</c>
+                  <c>W</c>
+                  <c>14</c>
+                </r>
+                <r>
+                  <c>A</c>
+                  <c>X</c>
+                  <c>64</c>
+                </r>
+                <r>
+                  <c>B</c>
+                  <c>W</c>
+                  <c>1.1</c>
+                </r>
+                <r>
+                  <c>B</c>
+                  <c>X</c>
+                  <c>5.4</c>
+                </r>
+                <r>
+                  <c>C</c>
+                  <c>W</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>C</c>
+                  <c>X</c>
+                  <c>19</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Category" size="1" source="TextInput:" type="String" />
+            <Field name="Color" size="1" source="TextInput:" type="String" />
+            <Field name="Value" source="TextInput:" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="246" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Category" action="GroupBy" rename="Category" />
+            <SummarizeField field="Value" action="Sum" rename="Category Total" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Category" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="438" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="Category Total" order="Descending" />
+            <Field field="Category" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>Category Total - Descending
+Category - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
+            <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="534" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>Location</FieldName>
+          <StartValue>0</StartValue>
+          <FieldType>Int64</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
+            <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
+            <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Location" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="630" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Location" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Summarize: Count - Location" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="726" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Target_Location" selected="True" input="Target_" />
+                <SelectField field="Target_Category" selected="True" input="Target_" />
+                <SelectField field="Target_Categories" selected="True" input="Target_" />
+                <SelectField field="Source_Count" selected="True" input="Source_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
+            <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
+            <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
+            <Field name="Count" source="Summarize: Count - Location" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="822" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="%Question.Width% / [Count]" field="Label Width" size="8" type="Double" />
+            <FormulaField expression="[Label Width] / 2" field="Midpoint" size="8" type="Double" />
+            <FormulaField expression="[Location] * [Label Width] + [Midpoint]" field="X" size="8" type="Double" />
+            <FormulaField expression="%Question.Padding%" field="Y" size="8" type="Double" />
+            <FormulaField expression="&quot;middle&quot;" field="Horizontal" size="6" type="String" />
+            <FormulaField expression="'%Question.Align%'" field="Vertical" size="2147483647" type="V_String" />
+            <FormulaField expression="%Question.LabelSize%" field="Size" size="8" type="Int64" />
+            <FormulaField expression="&quot;%Question.Font%&quot;" field="Font" size="2147483647" type="V_String" />
+            <FormulaField expression="%Question.Width% / [Categories]" field="Max Width" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>labels</AnnotationText>
+          <DefaultAnnotationText>Label Width = %Question.Width% / [Count]
+Midpoint = [Label Width] / 2
+X = [Locat...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Location" source="RecordID: Starting Value=0" type="Int64" />
+            <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
+            <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
+            <Field name="Count" source="Summarize: Count - Location" type="Int64" />
+            <Field name="Label Width" source="Formula: 400 / [Count]" type="Double" />
+            <Field name="Midpoint" source="Formula: [Label Width] / 2" type="Double" />
+            <Field name="X" source="Formula: [Location] * [Label Width] + [Midpoint]" type="Double" />
+            <Field name="Y" source="Formula: 4" type="Double" />
+            <Field name="Horizontal" size="6" source="Formula: &quot;middle&quot;" type="String" />
+            <Field name="Vertical" size="2147483647" source="Formula: 'top'" type="V_String" />
+            <Field name="Size" source="Formula: 12" type="Int64" />
+            <Field name="Font" size="2147483647" source="Formula: &quot;C:\Windows\Fonts\arial.ttf&quot;" type="V_String" />
+            <Field name="Max Width" source="Formula: 400 / [Categories]" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="726" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="0" field="x1" size="8" type="Int64" />
+            <FormulaField expression="0" field="y1" size="8" type="Double" />
+            <FormulaField expression="%Question.Width%" field="x2" size="8" type="Int64" />
+            <FormulaField expression="[y1]" field="y2" size="8" type="Double" />
+            <FormulaField expression="1" field="width" size="8" type="Double" />
+            <FormulaField expression="'A'" field="group" size="1" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>line</AnnotationText>
+          <DefaultAnnotationText><![CDATA[x1 = 0
+y1 = 0
+x2 = %Question.Width%
+y2 = [y1]
+width = 1
+group = 'A'
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Count" source="Summarize: Count - Location" type="Int64" />
+            <Field name="x1" source="Formula: 0" type="Int64" />
+            <Field name="y1" source="Formula: 0" type="Double" />
+            <Field name="x2" source="Formula: 400" type="Int64" />
+            <Field name="y2" source="Formula: [y1]" type="Double" />
+            <Field name="width" source="Formula: 1" type="Double" />
+            <Field name="group" size="1" source="Formula: 'A'" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="150" y="78" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>Width</Name>
+          <DefaultAnnotationText>Width</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="258" y="78" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>Height</Name>
+          <DefaultAnnotationText>Height</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="366" y="78" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>Padding</Name>
+          <DefaultAnnotationText>Padding</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+        <Position x="486" y="78" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>Font</Name>
+          <DefaultAnnotationText>Font</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
+        <Position x="726" y="78" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>Align</Name>
+          <DefaultAnnotationText>Align</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
+        <Position x="594" y="78" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>LabelSize</Name>
+          <DefaultAnnotationText>LabelSize</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="246" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Category" action="CountDistinct" rename="Categories" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="342" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Category" size="1" source="Summarize: GroupBy - Category" type="String" />
+            <Field name="Category Total" source="Summarize: Sum - Value" type="Double" />
+            <Field name="Categories" source="Summarize: CountDistinct - Category" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="NewImage">
+        <Position x="822" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Width>400</Width>
+          <Height>18</Height>
+          <Color>#00000000</Color>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="image" type="Blob" source="New Image" size="20" scale="0">
+            </Field>
+            <Field name="width" type="Int32" source="New Image" size="4" scale="0">
+            </Field>
+            <Field name="height" type="Int32" source="New Image" size="4" scale="0">
+            </Field>
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="NewImageEntry" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="762" y="258" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="822" y="258" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="DrawText">
+        <Position x="918" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ImageField>image</ImageField>
+          <TextField>Category</TextField>
+          <XField>X</XField>
+          <YField>Y</YField>
+          <SizeField>Size</SizeField>
+          <FontField>Font</FontField>
+          <MaxWidthField>Max Width</MaxWidthField>
+          <JustificationField>Horizontal</JustificationField>
+          <VerticalAlignmentField>Vertical</VerticalAlignmentField>
+          <RotationField>
+          </RotationField>
+          <ColorField>
+          </ColorField>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="image" type="Blob" source="Draw Text" size="20" scale="0">
+            </Field>
+            <Field name="width" type="Int32" source="Draw Text" size="4" scale="0">
+            </Field>
+            <Field name="height" type="Int32" source="Draw Text" size="4" scale="0">
+            </Field>
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="DrawTextEntry" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="DrawPrimitives">
+        <Position x="1014" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ImageField>image</ImageField>
+          <LineWidth>width</LineWidth>
+          <LineColor>
+          </LineColor>
+          <LineDash>
+          </LineDash>
+          <LineEndCap>
+          </LineEndCap>
+          <FillColor>
+          </FillColor>
+          <TypeOf>Path</TypeOf>
+          <Group>group</Group>
+          <PathX1>x1</PathX1>
+          <PathY1>y1</PathY1>
+          <PathX2>x2</PathX2>
+          <PathY2>y2</PathY2>
+          <PathX3>
+          </PathX3>
+          <PathY3>
+          </PathY3>
+          <PathX4>
+          </PathX4>
+          <PathY4>
+          </PathY4>
+          <X>
+          </X>
+          <Y>
+          </Y>
+          <Radius>
+          </Radius>
+          <Width>
+          </Width>
+          <Height>
+          </Height>
+          <Sides>
+          </Sides>
+          <CornerRadius>
+          </CornerRadius>
+          <Rotation>
+          </Rotation>
+          <StartAngle>
+          </StartAngle>
+          <EndAngle>
+          </EndAngle>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="image" type="Blob" source="Draw Primitives" size="20" scale="0">
+            </Field>
+            <Field name="width" type="Int32" source="Draw Primitives" size="4" scale="0">
+            </Field>
+            <Field name="height" type="Int32" source="Draw Primitives" size="4" scale="0">
+            </Field>
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="DrawPrimitivesEntry" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="1074" y="90" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1110" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1109" y="185" width="205" height="133" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Dev preview</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="25">
+          <GuiSettings Plugin="ExportImage">
+            <Position x="1134" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ImageField>image</ImageField>
+              <SaveAs>F:\Temp\BarChartXAxis.png</SaveAs>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="image path" type="V_String" source="Export Image" size="2147483647" scale="0">
+                </Field>
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="ExportImageEntry" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="PreviewImage">
+            <Position x="1230" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="PreviewImageEntry" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="18" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="8" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="22" Connection="Texts" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="22" Connection="Image" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="23" Connection="Primitives" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="23" Connection="Image" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="11" Connection="Question" />
+      <Destination ToolID="20" Connection="Question" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="12" Connection="Question" />
+      <Destination ToolID="21" Connection="Question" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="20" Connection="Action" />
+      <Destination ToolID="19" Connection="Action" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="21" Connection="Action" />
+      <Destination ToolID="19" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="25" Connection="Image" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="27" Connection="Action" />
+      <Destination ToolID="24" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="26" Connection="Image" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Width</Name>
+        <Value>400</Value>
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Height</Name>
+        <Value>18</Value>
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Padding</Name>
+        <Value>4</Value>
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Font</Name>
+        <Value>C:\Windows\Fonts\arial.ttf</Value>
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>LabelSize</Name>
+        <Value>12</Value>
+        <IsNumeric value="True" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Align</Name>
+        <Value>top</Value>
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (28)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>StaticBarChartX</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="6225cb02-9a58-4f69-8c1e-54fc99082a86" />
+      <Telemetry>
+        <PreviousWorkflowId value="5a27452b-a975-4c3d-837a-23c5fb8f08fb" />
+        <OriginWorkflowId value="5a27452b-a975-4c3d-837a-23c5fb8f08fb" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="20" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="False" />
+              <Destination>19/Width</Destination>
+            </Action>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="21" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="False" />
+              <Destination>19/Height</Destination>
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="27" />
+              <Expression>"True"</Expression>
+              <Destination>24/Disabled/@value</Destination>
+              <Mapping>Enable/Disable Container</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration>Enabled|Disabled	2</DynamicConfiguration>
+              <DefaultConfiguration value="False" />
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (2)</Name>
+          <ToolId value="2" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>NumericUpDown</Type>
+              <Description>Width</Description>
+              <Name>Width</Name>
+              <ToolId value="11" />
+              <Minimum value="0" />
+              <Maximum value="9999999" />
+              <Increment value="1" />
+              <Default value="500" />
+              <Decimals value="0" />
+            </Question>
+            <Question>
+              <Type>NumericUpDown</Type>
+              <Description>Height</Description>
+              <Name>Height</Name>
+              <ToolId value="12" />
+              <Minimum value="0" />
+              <Maximum value="9999999" />
+              <Increment value="1" />
+              <Default value="18" />
+              <Decimals value="0" />
+            </Question>
+            <Question>
+              <Type>NumericUpDown</Type>
+              <Description>Padding</Description>
+              <Name>Padding</Name>
+              <ToolId value="13" />
+              <Minimum value="0" />
+              <Maximum value="9999999" />
+              <Increment value="1" />
+              <Default value="4" />
+              <Decimals value="0" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Font</Description>
+              <Name>Font</Name>
+              <ToolId value="14" />
+              <Default>C:\Windows\Fonts\arial.ttf</Default>
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
+            </Question>
+            <Question>
+              <Type>NumericUpDown</Type>
+              <Description>Label Size</Description>
+              <Name>LabelSize</Name>
+              <ToolId value="16" />
+              <Minimum value="0" />
+              <Maximum value="9999999" />
+              <Increment value="1" />
+              <Default value="12" />
+              <Decimals value="0" />
+            </Question>
+            <Question>
+              <Type>ListBox</Type>
+              <Description>Align</Description>
+              <Name>Align</Name>
+              <ToolId value="15" />
+              <Multiple value="False" />
+              <Default>Top</Default>
+              <Mode>Manual</Mode>
+              <Manual_Values><![CDATA[Top
+Middle
+Bottom
+]]></Manual_Values>
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (28)</Description>
+              <Name>Macro Output (28)</Name>
+              <ToolId value="28" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="19" Selected="True" />
+        <Tool ToolId="22" Selected="True" />
+        <Tool ToolId="23" Selected="True" />
+        <Tool ToolId="25" Selected="True" />
+        <Tool ToolId="26" Selected="True" />
+        <Tool ToolId="28" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

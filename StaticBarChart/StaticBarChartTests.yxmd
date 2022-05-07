@@ -54,7 +54,7 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="90">
+    <Node ToolID="156">
       <GuiSettings>
         <Position x="426" y="54" />
       </GuiSettings>
@@ -81,9 +81,6 @@ Value=Value
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings Macro="StaticBarChart.yxmc" />
     </Node>
@@ -123,7 +120,7 @@ Value=Value
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="330" y="138" />
+        <Position x="330" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -174,9 +171,9 @@ Value=Value
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="89">
+    <Node ToolID="157">
       <GuiSettings>
-        <Position x="426" y="138" />
+        <Position x="426" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -207,7 +204,7 @@ Value=Value
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="PreviewImage">
-        <Position x="522" y="138" />
+        <Position x="522" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -221,7 +218,7 @@ Value=Value
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="138" width="240" height="60" />
+        <Position x="54" y="222" width="240" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -239,9 +236,9 @@ Value=Value
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="88">
+    <Node ToolID="158">
       <GuiSettings>
-        <Position x="522" y="222" />
+        <Position x="522" y="306" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -272,7 +269,7 @@ Value=Value
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="PreviewImage">
-        <Position x="618" y="222" />
+        <Position x="618" y="306" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -286,7 +283,7 @@ Value=Value
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="222" width="240" height="60" />
+        <Position x="54" y="306" width="240" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -306,7 +303,7 @@ Value=Value
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="426" y="222" />
+        <Position x="426" y="306" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -326,6 +323,159 @@ Value=Value
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
     <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="330" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="13" />
+          <Fields>
+            <Field name="Category" />
+            <Field name="Value" />
+            <Field name="Color" />
+          </Fields>
+          <Data>
+            <r>
+              <c>A</c>
+              <c>10</c>
+              <c>W</c>
+            </r>
+            <r>
+              <c>A</c>
+              <c>20</c>
+              <c>W</c>
+            </r>
+            <r>
+              <c>B</c>
+              <c>25</c>
+              <c>W</c>
+            </r>
+            <r>
+              <c>B</c>
+              <c>16</c>
+              <c>X</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>3</c>
+              <c>W</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>18</c>
+              <c>W</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>31</c>
+              <c>X</c>
+            </r>
+            <r>
+              <c>A</c>
+              <c>4</c>
+              <c>X</c>
+            </r>
+            <r>
+              <c>B</c>
+              <c>22</c>
+              <c>X</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>16</c>
+              <c>X</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>11</c>
+              <c>X</c>
+            </r>
+            <r>
+              <c>D</c>
+              <c>-10</c>
+              <c>W</c>
+            </r>
+            <r>
+              <c>D</c>
+              <c>10</c>
+              <c>X</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="159">
+      <GuiSettings>
+        <Position x="426" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Width">500</Value>
+          <Value name="Height">500</Value>
+          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
+          <Value name="Background">#FFFFFF</Value>
+          <Value name="Input.Data"><![CDATA[Category=Category
+Color=Color
+Value=Value
+]]></Value>
+          <Value name="BarColors">#0000FF
+#FF0000</Value>
+          <Value name="SaveTo">Test Results\3 blue red bars positive and negative.png</Value>
+          <Value name="ShowX">False</Value>
+          <Value name="xHeight">18</Value>
+          <Value name="xLabelSize">12</Value>
+          <Value name="xPadding">4</Value>
+          <Value name="xAlign">Top</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>StaticBarChart (16)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="F:\repositories\StaticCharts\StaticBarChart\StaticBarChart.yxmc" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="PreviewImage">
+        <Position x="522" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="PreviewImageEntry" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="474" width="240" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>3 blue and red bars. FIrst 2 bars positive. Third bar red positive, blue negative</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
         <Position x="330" y="390" />
       </GuiSettings>
@@ -413,38 +563,7 @@ Value=Value
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="87">
-      <GuiSettings>
-        <Position x="426" y="390" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Value name="Width">500</Value>
-          <Value name="Height">500</Value>
-          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
-          <Value name="Background">#FFFFFF</Value>
-          <Value name="Input.Data"><![CDATA[Category=Category
-Color=Color
-Value=Value
-]]></Value>
-          <Value name="BarColors">#0000FF
-#FF0000</Value>
-          <Value name="SaveTo">Test Results\3 blue red bars positive and negative.png</Value>
-          <Value name="ShowX">False</Value>
-          <Value name="xHeight">18</Value>
-          <Value name="xLabelSize">12</Value>
-          <Value name="xPadding">4</Value>
-          <Value name="xAlign">Top</Value>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name>StaticBarChart (16)</Name>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings Macro="F:\repositories\StaticCharts\StaticBarChart\StaticBarChart.yxmc" />
-    </Node>
-    <Node ToolID="17">
+    <Node ToolID="21">
       <GuiSettings Plugin="PreviewImage">
         <Position x="522" y="390" />
       </GuiSettings>
@@ -458,131 +577,9 @@ Value=Value
       </Properties>
       <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="PreviewImageEntry" />
     </Node>
-    <Node ToolID="18">
-      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="390" width="240" height="60" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Text>3 blue and red bars. FIrst 2 bars positive. Third bar red positive, blue negative</Text>
-          <Font name="Arial" size="8.25" style="0" />
-          <TextColor name="Black" />
-          <FillColor name="White" />
-          <Shape shape="0" />
-          <Justification Justification="3" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-    </Node>
-    <Node ToolID="19">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="330" y="306" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <NumRows value="13" />
-          <Fields>
-            <Field name="Category" />
-            <Field name="Value" />
-            <Field name="Color" />
-          </Fields>
-          <Data>
-            <r>
-              <c>A</c>
-              <c>10</c>
-              <c>W</c>
-            </r>
-            <r>
-              <c>A</c>
-              <c>20</c>
-              <c>W</c>
-            </r>
-            <r>
-              <c>B</c>
-              <c>25</c>
-              <c>W</c>
-            </r>
-            <r>
-              <c>B</c>
-              <c>16</c>
-              <c>X</c>
-            </r>
-            <r>
-              <c>C</c>
-              <c>3</c>
-              <c>W</c>
-            </r>
-            <r>
-              <c>C</c>
-              <c>18</c>
-              <c>W</c>
-            </r>
-            <r>
-              <c>C</c>
-              <c>31</c>
-              <c>X</c>
-            </r>
-            <r>
-              <c>A</c>
-              <c>4</c>
-              <c>X</c>
-            </r>
-            <r>
-              <c>B</c>
-              <c>22</c>
-              <c>X</c>
-            </r>
-            <r>
-              <c>C</c>
-              <c>16</c>
-              <c>X</c>
-            </r>
-            <r>
-              <c>C</c>
-              <c>11</c>
-              <c>X</c>
-            </r>
-            <r>
-              <c>D</c>
-              <c>-10</c>
-              <c>W</c>
-            </r>
-            <r>
-              <c>D</c>
-              <c>10</c>
-              <c>X</c>
-            </r>
-          </Data>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
-    </Node>
-    <Node ToolID="21">
-      <GuiSettings Plugin="PreviewImage">
-        <Position x="522" y="306" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="PreviewImageEntry" />
-    </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="306" width="240" height="60" />
+        <Position x="54" y="390" width="240" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -602,7 +599,7 @@ Value=Value
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Test.Test">
-        <Position x="714" y="306" />
+        <Position x="714" y="390" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -626,7 +623,7 @@ Value=Value
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="618" y="306" />
+        <Position x="618" y="390" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -645,7 +642,7 @@ Value=Value
     </Node>
     <Node ToolID="40">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="330" y="474" />
+        <Position x="330" y="558" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -698,7 +695,7 @@ Value=Value
     </Node>
     <Node ToolID="42">
       <GuiSettings Plugin="PreviewImage">
-        <Position x="522" y="474" />
+        <Position x="522" y="558" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -712,7 +709,7 @@ Value=Value
     </Node>
     <Node ToolID="43">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="474" width="240" height="60" />
+        <Position x="54" y="558" width="240" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -730,9 +727,9 @@ Value=Value
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="86">
+    <Node ToolID="160">
       <GuiSettings>
-        <Position x="426" y="306" />
+        <Position x="426" y="390" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -761,9 +758,9 @@ Value=Value
       </Properties>
       <EngineSettings Macro="F:\repositories\StaticCharts\StaticBarChart\StaticBarChart.yxmc" />
     </Node>
-    <Node ToolID="85">
+    <Node ToolID="161">
       <GuiSettings>
-        <Position x="426" y="474" />
+        <Position x="426" y="558" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -793,7 +790,7 @@ Value=Value
     </Node>
     <Node ToolID="80">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="330" y="558" />
+        <Position x="330" y="642" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -846,7 +843,7 @@ Value=Value
     </Node>
     <Node ToolID="81">
       <GuiSettings Plugin="PreviewImage">
-        <Position x="522" y="558" />
+        <Position x="522" y="642" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -860,7 +857,7 @@ Value=Value
     </Node>
     <Node ToolID="82">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="54" y="558" width="240" height="60" />
+        <Position x="54" y="642" width="240" height="60" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -878,9 +875,9 @@ Value=Value
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="84">
+    <Node ToolID="162">
       <GuiSettings>
-        <Position x="426" y="558" />
+        <Position x="426" y="642" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -905,9 +902,124 @@ Value=Value
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="F:\repositories\StaticCharts\StaticBarChart\StaticBarChart.yxmc" />
+    </Node>
+    <Node ToolID="119">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="330" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="6" />
+          <Fields>
+            <Field name="Category" />
+            <Field name="Color" />
+            <Field name="Value" />
+          </Fields>
+          <Data>
+            <r>
+              <c>A</c>
+              <c>Y</c>
+              <c>14</c>
+            </r>
+            <r>
+              <c>A</c>
+              <c>Z</c>
+              <c>64</c>
+            </r>
+            <r>
+              <c>B</c>
+              <c>Y</c>
+              <c>1.1</c>
+            </r>
+            <r>
+              <c>B</c>
+              <c>Z</c>
+              <c>5.4</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>Y</c>
+              <c>3</c>
+            </r>
+            <r>
+              <c>C</c>
+              <c>Z</c>
+              <c>19</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="121">
+      <GuiSettings Plugin="PreviewImage">
+        <Position x="522" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="PreviewImageEntry" />
+    </Node>
+    <Node ToolID="122">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="138" width="240" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>3 green and purple bars, all positive</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="155">
+      <GuiSettings>
+        <Position x="426" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Width">500</Value>
+          <Value name="Height">500</Value>
+          <Value name="Font">C:\Windows\Fonts\arial.ttf</Value>
+          <Value name="Background">#FFFFFF</Value>
+          <Value name="Input.Data"><![CDATA[Category=Category
+Color=Color
+Value=Value
+]]></Value>
+          <Value name="BarColors">#00FF00
+#FF00FF</Value>
+          <Value name="SaveTo">Test Results\3 positive green purple bars.png</Value>
+          <Value name="ShowX">False</Value>
+          <Value name="xHeight">18</Value>
+          <Value name="xLabelSize">12</Value>
+          <Value name="xPadding">4</Value>
+          <Value name="xAlign">Top</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>StaticBarChart (120)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
       </Properties>
       <EngineSettings Macro="F:\repositories\StaticCharts\StaticBarChart\StaticBarChart.yxmc" />
     </Node>
@@ -915,43 +1027,43 @@ Value=Value
   <Connections>
     <Connection>
       <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="90" Connection="Data" />
+      <Destination ToolID="156" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="90" Connection="Chart" />
+      <Origin ToolID="156" Connection="Chart" />
       <Destination ToolID="4" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output" />
-      <Destination ToolID="89" Connection="Data" />
+      <Destination ToolID="157" Connection="Data" />
     </Connection>
     <Connection>
       <Origin ToolID="6" Connection="Output" />
       <Destination ToolID="14" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="89" Connection="Chart" />
+      <Origin ToolID="157" Connection="Chart" />
       <Destination ToolID="8" Connection="Image" />
     </Connection>
     <Connection>
-      <Origin ToolID="88" Connection="Chart" />
+      <Origin ToolID="158" Connection="Chart" />
       <Destination ToolID="12" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="14" Connection="Output" />
-      <Destination ToolID="88" Connection="Data" />
+      <Destination ToolID="158" Connection="Data" />
     </Connection>
     <Connection>
       <Origin ToolID="15" Connection="Output" />
-      <Destination ToolID="87" Connection="Data" />
+      <Destination ToolID="159" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="87" Connection="Chart" />
+      <Origin ToolID="159" Connection="Chart" />
       <Destination ToolID="17" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="19" Connection="Output" />
-      <Destination ToolID="86" Connection="Data" />
+      <Destination ToolID="160" Connection="Data" />
     </Connection>
     <Connection name="#1">
       <Origin ToolID="29" Connection="Output" />
@@ -959,27 +1071,35 @@ Value=Value
     </Connection>
     <Connection>
       <Origin ToolID="40" Connection="Output" />
-      <Destination ToolID="85" Connection="Data" />
+      <Destination ToolID="161" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="86" Connection="Legend" />
+      <Origin ToolID="160" Connection="Legend" />
       <Destination ToolID="21" Connection="Image" />
     </Connection>
     <Connection>
-      <Origin ToolID="86" Connection="Legend" />
+      <Origin ToolID="160" Connection="Legend" />
       <Destination ToolID="29" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="85" Connection="Chart" />
+      <Origin ToolID="161" Connection="Chart" />
       <Destination ToolID="42" Connection="Image" />
     </Connection>
     <Connection>
       <Origin ToolID="80" Connection="Output" />
-      <Destination ToolID="84" Connection="Data" />
+      <Destination ToolID="162" Connection="Data" />
     </Connection>
     <Connection>
-      <Origin ToolID="84" Connection="Chart" />
+      <Origin ToolID="162" Connection="Chart" />
       <Destination ToolID="81" Connection="Image" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="119" Connection="Output" />
+      <Destination ToolID="155" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="155" Connection="Chart" />
+      <Destination ToolID="121" Connection="Image" />
     </Connection>
   </Connections>
   <Properties>
