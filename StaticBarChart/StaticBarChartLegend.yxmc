@@ -1,0 +1,727 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="342" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Color" action="GroupBy" rename="Color" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Color" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="138" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="Fill Color" />
+          </Fields>
+          <Data>
+            <r>
+              <c>%Question.BarColors%</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Bar color palette</AnnotationText>
+          <DefaultAnnotationText>Bar color palette</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Fill Color" size="15" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="234" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Fill Color</Field>
+          <Delimeters value="\n" />
+          <NumFields value="1" />
+          <Flags value="16" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="342" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Fill Color" action="Count" rename="Colors" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Colors" source="Summarize: Count - Fill Color" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="438" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
+            <Field name="Colors" source="Summarize: Count - Fill Color" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="534" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>Color</UpdateField_Name>
+          <CreateField_Name>Color ID</CreateField_Name>
+          <CreateField_Type>Int64</CreateField_Type>
+          <CreateField_Size>8</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>IF   [Row-1:Color ID] + 1 &gt; [Colors]
+THEN 1
+ELSE [Row-1:Color ID] + 1
+ENDIF</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Color ID</AnnotationText>
+          <DefaultAnnotationText>IF   [Row-1:Color ID] + 1 &gt; [Colors]
+THEN 1
+ELSE [Row-1:Color...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
+            <Field name="Colors" source="Summarize: Count - Fill Color" type="Int64" />
+            <Field description="Formula: IF   [Row-1:Color ID] + 1 &gt; [Colors]&#xA;THEN 1&#xA;ELSE [Row-1:Color ID] + 1&#xA;ENDIF" name="Color ID" source="Formula: IF   [Row-1:Color ID] + 1 &gt; [Colors]&#xA;THEN 1&#xA;ELSE [Row-1:Color ID] + 1&#xA;ENDIF" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="342" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>Color ID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int64</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Color ID" source="RecordID: Starting Value=1" type="Int64" />
+            <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Color ID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="630" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Color ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Color ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Color" selected="True" input="Left_" />
+                <SelectField field="Right_Color ID" selected="False" rename="Right_Color ID" input="Right_" />
+                <SelectField field="Right_Fill Color" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
+            <Field name="Colors" source="Summarize: Count - Fill Color" type="Int64" />
+            <Field description="Formula: IF   [Row-1:Color ID] + 1 &gt; [Colors]&#xA;THEN 1&#xA;ELSE [Row-1:Color ID] + 1&#xA;ENDIF" name="Color ID" source="Formula: IF   [Row-1:Color ID] + 1 &gt; [Colors]&#xA;THEN 1&#xA;ELSE [Row-1:Color ID] + 1&#xA;ENDIF" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Color ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
+            <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Color ID" source="RecordID: Starting Value=1" type="Int64" />
+            <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Color ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1014" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[text width] + 24" field="Width" size="8" type="Double" />
+            <FormulaField expression="[text height] + (4 * [Count])" field="Height" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Size</AnnotationText>
+          <DefaultAnnotationText><![CDATA[Width = [text width] + 24
+Height = [text height] + (4 * [Count])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="text width" source="Measure String" type="Double" />
+            <Field name="text height" source="Summarize: Sum - text height" type="Double" />
+            <Field name="Count" source="Summarize: Count - Color" type="Int64" />
+            <Field name="Width" source="Formula: [text width] + 24" type="Double" />
+            <Field name="Height" source="Formula: [text height] + (4 * [Count])" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="918" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="text width" action="Max" rename="text width" />
+            <SummarizeField field="text height" action="Sum" rename="text height" />
+            <SummarizeField field="Color" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="text width" source="Measure String" type="Double" />
+            <Field name="text height" source="Summarize: Sum - text height" type="Double" />
+            <Field name="Count" source="Summarize: Count - Color" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings>
+        <Position x="1110" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="BatchMacroGroupBy" />
+          <Value name="Input.Input"><![CDATA[Label=Color
+Color=Fill Color
+]]></Value>
+          <Value name="ControlParams"><![CDATA[Width=Width
+Height=Height
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Legend">
+          <RecordInfo>
+            <Field name="image" size="2147483647" source="Draw Text (BatchMacro)" type="Blob" />
+            <Field name="width" source="Draw Text (BatchMacro)" type="Int32" />
+            <Field name="height" source="Draw Text (BatchMacro)" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro=".\Legend.yxmc" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="MeasureText">
+        <Position x="822" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TextField>Color</TextField>
+          <SizeField>Text Size</SizeField>
+          <FontField>Font</FontField>
+          <MaxWidthField>
+          </MaxWidthField>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Color" type="String" source="Summarize: GroupBy - Color" size="1" scale="0">
+            </Field>
+            <Field name="Fill Color" type="String" source="TextToColumns: Parsed from Fill Color" size="15" scale="0">
+            </Field>
+            <Field name="Text Size" type="Double" source="Formula: 16" size="8" scale="0">
+            </Field>
+            <Field name="Font" type="V_WString" source="Formula: &quot;C:\Windows\Fonts\arial.ttf&quot;" size="1073741823" scale="0">
+            </Field>
+            <Field name="text width" type="Double" source="Measure String" size="8" scale="0">
+            </Field>
+            <Field name="text height" type="Double" source="Measure String" size="8" scale="0">
+            </Field>
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="render_image.dll" EngineDllEntryPoint="MeasureTextEntry" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="726" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="16" field="Text Size" size="8" type="Double" />
+            <FormulaField expression="&quot;%Question.Font%&quot;" field="Font" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>format</AnnotationText>
+          <DefaultAnnotationText><![CDATA[Text Size = 16
+Font = "%Question.Font%"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Color" size="1" source="Summarize: GroupBy - Color" type="String" />
+            <Field description="TextToColumns: Parsed from Fill Color" name="Fill Color" size="15" source="TextToColumns: Parsed from Fill Color" type="String" />
+            <Field name="Text Size" source="Formula: 16" type="Double" />
+            <Field name="Font" size="1073741823" source="Formula: &quot;C:\Windows\Fonts\arial.ttf&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="138" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="6" />
+              <Fields>
+                <Field name="Category" />
+                <Field name="Color" />
+                <Field name="Value" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>A</c>
+                  <c>W</c>
+                  <c>14</c>
+                </r>
+                <r>
+                  <c>A</c>
+                  <c>X</c>
+                  <c>64</c>
+                </r>
+                <r>
+                  <c>B</c>
+                  <c>W</c>
+                  <c>1.1</c>
+                </r>
+                <r>
+                  <c>B</c>
+                  <c>X</c>
+                  <c>5.4</c>
+                </r>
+                <r>
+                  <c>C</c>
+                  <c>W</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>C</c>
+                  <c>X</c>
+                  <c>19</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Category" size="1" source="TextInput:" type="String" />
+            <Field name="Color" size="1" source="TextInput:" type="String" />
+            <Field name="Value" source="TextInput:" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1206" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+        <Position x="198" y="78" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>Font</Name>
+          <DefaultAnnotationText>Font</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+        <Position x="294" y="78" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>BarColors</Name>
+          <DefaultAnnotationText>BarColors</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="5" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Join" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="11" Connection="Control" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Join" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Legend" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="12" Connection="Texts" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="1" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Font</Name>
+        <Value>C:\Windows\Fonts\arial.ttf</Value>
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>BarColors</Name>
+        <Value>#0000FF
+#FF0000</Value>
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>StaticBarChartLegend</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="f3301cfd-2396-477c-8305-3d87053f5068" />
+      <Telemetry>
+        <PreviousWorkflowId value="af6c6774-1bef-44f1-8fba-151502a42b94" />
+        <OriginWorkflowId value="af6c6774-1bef-44f1-8fba-151502a42b94" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (15)</Name>
+          <ToolId value="15" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (14)</Name>
+              <ToolId value="14" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (16)</Description>
+              <Name>Macro Output (16)</Name>
+              <ToolId value="16" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Font</Description>
+              <Name>Font</Name>
+              <ToolId value="17" />
+              <Default>C:\Windows\Fonts\arial.ttf</Default>
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Bar Color Palette (one color per line)</Description>
+              <Name>BarColors</Name>
+              <ToolId value="18" />
+              <Default />
+              <Password value="False" />
+              <Multiline value="True" />
+              <Hidden value="False" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="11" Selected="True" />
+        <Tool ToolId="12" Selected="True" />
+        <Tool ToolId="16" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

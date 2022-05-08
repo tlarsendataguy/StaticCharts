@@ -248,7 +248,7 @@ All Records Combined</DefaultAnnotationText>
           <ModifyMode>ReplacePath</ModifyMode>
           <ModifyField>image path</ModifyField>
           <StopIfNotFound value="True" />
-          <ImageStyle FixedWidth="false" ImageWidth="200" ShowBorder="false" BorderWidth="1" BorderColor="#000000" />
+          <ImageStyle FixedWidth="true" ImageWidth="130" ShowBorder="false" BorderWidth="1" BorderColor="#000000" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
